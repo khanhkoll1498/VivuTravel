@@ -17,6 +17,7 @@
         android:layout_toLeftOf="@+id/tv_cancel"
         android:background="@drawable/bg_shape_editext"
         android:backgroundTint="#F2F2F4"
+        android:focusable="false"
         android:hint="Tìm kiếm"
         android:imeOptions="actionSearch"
         android:inputType="text"

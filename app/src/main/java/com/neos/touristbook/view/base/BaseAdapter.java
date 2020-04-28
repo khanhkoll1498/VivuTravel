@@ -1,5 +1,6 @@
 package com.neos.touristbook.view.base;
 
+import android.content.Context;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import com.neos.touristbook.view.event.OnActionCallback;
 
 abstract public class BaseAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     protected OnActionCallback mCallback;
+    protected  Context mContext;
 
     public void setmCallback(OnActionCallback mCallback) {
         this.mCallback = mCallback;
