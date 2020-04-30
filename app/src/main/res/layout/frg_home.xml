@@ -30,7 +30,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_margin="@dimen/_8sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_shape_editext"
+                    android:background="@drawable/bg_corner_8dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -56,7 +56,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_margin="@dimen/_8sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_shape_editext"
+                    android:background="@drawable/bg_corner_8dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -80,7 +80,7 @@
                     android:layout_height="@dimen/_40sdp"
                     android:layout_margin="@dimen/_8sdp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_shape_editext"
+                    android:background="@drawable/bg_corner_8dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
