@@ -40,7 +40,7 @@ public class ReviewAdapter extends BaseAdapter {
 
     @Override
     protected int getCount() {
-        return 20;
+        return 6;
     }
 
     public void updateList(List<Review> soundList) {
@@ -49,7 +49,7 @@ public class ReviewAdapter extends BaseAdapter {
     }
 
     class MyViewHolder extends BaseViewHolder implements View.OnClickListener {
-        private TextView tvOldPrice;
+//        private TextView tvOldPrice;
 
         private MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,7 +57,7 @@ public class ReviewAdapter extends BaseAdapter {
 
         @Override
         protected void initView() {
-            tvOldPrice = findViewById(R.id.tv_old_price);
+//            tvOldPrice = findViewById(R.id.tv_old_price);
             itemView.setOnClickListener(this);
         }
 

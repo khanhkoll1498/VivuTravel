@@ -1,40 +1,35 @@
 package com.neos.touristbook.view.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Paint;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.neos.touristbook.R;
 import com.neos.touristbook.model.Tour;
+import com.neos.touristbook.view.base.BaseActivity;
 import com.neos.touristbook.view.base.BaseAdapter;
 import com.neos.touristbook.view.base.BaseViewHolder;
 
 import java.util.List;
 
-import static java.security.AccessController.getContext;
 
 public class TourAdapter extends BaseAdapter {
-    public static final String KEY_CLICK_TOUR = "KEY_CLICK_TOUR";
-    private final DisplayMetrics displayMetrics;
+    public static final String KEY_CLICK_ITEM = "KEY_CLICK_ITEM";
+    private static final Object BASE_URL = "https://www.saigontourist.net/";
     private List<Tour> mList;
     private boolean isPreview = true;
 
     public TourAdapter(List<Tour> mList, Context context) {
         this.mList = mList;
         this.mContext = context;
-        displayMetrics = new DisplayMetrics();
-        ((Activity) mContext).getWindowManager()
-                .getDefaultDisplay()
-                .getMetrics(displayMetrics);
     }
 
     @Override
@@ -50,16 +45,20 @@ public class TourAdapter extends BaseAdapter {
     @Override
     protected void onBindView(RecyclerView.ViewHolder viewHolder, int position) {
         MyViewHolder holder = (MyViewHolder) viewHolder;
-        strikeThroughText(holder.tvOldPrice);
+        Tour item = mList.get(position);
         if (!isPreview) {
-            holder.itemView.getLayoutParams().width = displayMetrics.widthPixels / 2 - 16;
+            holder.itemView.getLayoutParams().width = BaseActivity.displayMetrics.widthPixels / 2 - 16;
             holder.itemView.requestLayout();
         }
+        holder.tvPrice.setText(item.getPrice());
+        holder.tvTourName.setText(item.getTitle());
+        Glide.with(mContext).load(BASE_URL + item.getImageList().get(0).getImage()).into(holder.ivPreview);
+        holder.itemView.setTag(item);
     }
 
     @Override
     protected int getCount() {
-        return 20;
+        return mList.size();
     }
 
     public void updateList(List<Tour> soundList) {
@@ -73,7 +72,10 @@ public class TourAdapter extends BaseAdapter {
 
 
     class MyViewHolder extends BaseViewHolder implements View.OnClickListener {
-        private TextView tvOldPrice;
+
+        private TextView tvPrice;
+        private TextView tvTourName;
+        private ImageView ivPreview;
 
         private MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,13 +83,15 @@ public class TourAdapter extends BaseAdapter {
 
         @Override
         protected void initView() {
-            tvOldPrice = findViewById(R.id.tv_old_price);
             itemView.setOnClickListener(this);
+            tvPrice = itemView.findViewById(R.id.tv_price);
+            tvTourName = itemView.findViewById(R.id.tv_tour_name);
+            ivPreview = itemView.findViewById(R.id.iv_preview);
         }
 
         @Override
         public void onClick(View v) {
-            mCallback.callback(KEY_CLICK_TOUR, itemView.getTag());
+            mCallback.callback(KEY_CLICK_ITEM, itemView.getTag());
         }
     }
 }

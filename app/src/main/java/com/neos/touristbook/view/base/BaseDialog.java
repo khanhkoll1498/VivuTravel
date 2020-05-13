@@ -15,7 +15,7 @@ import com.neos.touristbook.StorageCommon;
 import com.neos.touristbook.presenter.BasePresenter;
 import com.neos.touristbook.view.event.OnActionCallback;
 
-abstract public class BaseDialog<T extends BasePresenter> extends Dialog {
+abstract public class BaseDialog<T extends BasePresenter> extends Dialog implements View.OnClickListener{
     protected T mPresenter;
     protected OnActionCallback mCallback;
     protected Handler mHandler = new Handler(new Handler.Callback() {
@@ -33,15 +33,21 @@ abstract public class BaseDialog<T extends BasePresenter> extends Dialog {
     protected StorageCommon getStorageCommon() {
         return App.getInstance().getStorageCommon();
     }
+
     public void setmCallback(OnActionCallback mCallback) {
         this.mCallback = mCallback;
     }
 
-    public BaseDialog(@NonNull Context context) {
-        super(context);
+    public BaseDialog(@NonNull Context context, int style) {
+        super(context, style);
         initPresenter();
         setContentView(getLayoutId());
         initView();
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 
     protected abstract void initPresenter();

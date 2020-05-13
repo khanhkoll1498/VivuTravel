@@ -28,7 +28,7 @@ public class ReviewFrg extends BaseFragment {
 
     private void initReview() {
         RecyclerView rvReview = (RecyclerView) findViewById(R.id.rv_review);
-        rvReview.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        rvReview.setLayoutManager(new GridLayoutManager(getContext(), 2));
         ReviewAdapter adapter = new ReviewAdapter(new ArrayList<>(), getContext());
         rvReview.setAdapter(adapter);
     }

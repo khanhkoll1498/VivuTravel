@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,6 +27,8 @@ import java.lang.reflect.Constructor;
 
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements OnActionCallback {
     protected T mPresenter;
+    public static DisplayMetrics displayMetrics;
+
     protected Handler mHandler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(@NonNull Message msg) {
@@ -50,6 +53,11 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         setContentView(getLayoutId());
         initPresenter();
         initView();
+        displayMetrics = new DisplayMetrics();
+        getWindowManager()
+                .getDefaultDisplay()
+                .getMetrics(displayMetrics);
+
     }
 
     protected abstract void initPresenter();
