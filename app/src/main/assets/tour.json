@@ -61,7 +61,7 @@
   },
   {
     "category": "cate_01",
-    "id": "SaPa",
+    "id": "2",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/mienbac/sapa/Fansipan_706797802.jpg"
@@ -91,7 +91,7 @@
   },
   {
     "category": "cate_02",
-    "id": "PhanThiet",
+    "id": "3",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/Phanthiet/Mui-Ne-beach_434936272.jpg"
@@ -121,7 +121,7 @@
   },
   {
     "category": "cate_03",
-    "id": "PhuQuoc",
+    "id": "4",
     "imageList": [
       {
         "image": "/uploads/destination/cover-tour-tag/tour-tag-phuquoc.jpg"
@@ -154,7 +154,7 @@
   },
   {
     "category": "cate_02",
-    "id": "QuyNhon",
+    "id": "5",
     "imageList": [
       {
         "image": "/uploads/destination/cover-tour-tag/tour-tag-quynhon.jpg"
@@ -187,7 +187,7 @@
   },
   {
     "category": "cate_02",
-    "id": "Hue",
+    "id": "6",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/Hue/site-of-Citadel.jpg"
@@ -220,7 +220,7 @@
   },
   {
     "category": "cate_02",
-    "id": "NhaTrang",
+    "id": "7",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/Nhatrang/add-logo-photo-nha-trang-2.jpg"
@@ -253,7 +253,7 @@
   },
   {
     "category": "cate_01",
-    "id": "HaNoi",
+    "id": "8",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/Hanoi/Ho-Hoan-Kiem-Ha-Noi.jpg"
@@ -286,7 +286,7 @@
   },
   {
     "category": "cate_03",
-    "id": "MienTay",
+    "id": "9",
     "imageList": [
       {
         "image": "/uploads/destination/TrongNuoc/Mientay/Can%20tho/Cai-Rang-floating-market_633167327.jpg"
