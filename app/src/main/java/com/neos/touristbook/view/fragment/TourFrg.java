@@ -1,16 +1,17 @@
 package com.neos.touristbook.view.fragment;
 
+import android.content.Intent;
+
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.neos.touristbook.R;
 import com.neos.touristbook.event.TourCallback;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.presenter.TourPresenter;
+import com.neos.touristbook.view.activity.DetailTourAct;
 import com.neos.touristbook.view.adapter.TourAdapter;
 import com.neos.touristbook.view.base.BaseFragment;
-import com.neos.touristbook.view.dialog.DetailTourDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
 
 import java.util.ArrayList;
@@ -52,15 +53,15 @@ public class TourFrg extends BaseFragment<TourPresenter> implements OnActionCall
     @Override
     public void callback(String key, Object data) {
         if (key.equals(KEY_CLICK_ITEM)) {
-            Tour tour= (Tour) data;
+            Tour tour = (Tour) data;
             showDetailTour(tour);
         }
     }
 
     private void showDetailTour(Tour tour) {
-        DetailTourDialog dialog = new DetailTourDialog(context, R.style.AppTheme);
-        dialog.setTour(tour);
-        dialog.show();
+        Intent intent = new Intent(getContext(), DetailTourAct.class);
+        intent.putExtra("data", tour);
+        startActivity(intent);
     }
 
     @Override

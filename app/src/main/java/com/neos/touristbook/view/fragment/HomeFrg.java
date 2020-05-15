@@ -1,5 +1,6 @@
 package com.neos.touristbook.view.fragment;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
 
@@ -9,8 +10,11 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.neos.touristbook.R;
 import com.neos.touristbook.event.TourCallback;
+import com.neos.touristbook.model.Image;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.presenter.TourPresenter;
+import com.neos.touristbook.utils.CommonUtils;
+import com.neos.touristbook.view.activity.DetailTourAct;
 import com.neos.touristbook.view.adapter.PreviewAdapter;
 import com.neos.touristbook.view.adapter.TourAdapter;
 import com.neos.touristbook.view.base.BaseFragment;
@@ -19,6 +23,8 @@ import com.neos.touristbook.view.event.OnActionCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.neos.touristbook.view.adapter.TourAdapter.KEY_CLICK_ITEM;
 
 public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCallback, TourCallback {
     public static final String KEY_NOTHERN = "cate_01";
@@ -95,11 +101,11 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
 
     private void initPreView() {
         vpPreview = (ViewPager) findViewById(R.id.vp_preview);
-        adapter = new PreviewAdapter(getChildFragmentManager(), new String[]{
-                "//android_asset/preview/preview1.jpg",
-                "//android_asset/preview/preview2.jpg",
-                "//android_asset/preview/preview3.jpg"
-        });
+        List<String> imageList = new ArrayList<>();
+        imageList.add("//android_asset/preview/preview1.jpg");
+        imageList.add("//android_asset/preview/preview2.jpg");
+        imageList.add("//android_asset/preview/preview3.jpg");
+        adapter = new PreviewAdapter(getChildFragmentManager(), imageList);
         vpPreview.setAdapter(adapter);
         smoothPreview();
     }
@@ -124,7 +130,15 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
 
     @Override
     public void callback(String key, Object data) {
-
+        if (key.equals(KEY_CLICK_ITEM)) {
+            Tour tour = (Tour) data;
+            showDetailTour(tour);
+        }
+    }
+    private void showDetailTour(Tour tour) {
+        Intent intent = new Intent(getContext(), DetailTourAct.class);
+        intent.putExtra("data", tour);
+        startActivity(intent);
     }
 
     @Override

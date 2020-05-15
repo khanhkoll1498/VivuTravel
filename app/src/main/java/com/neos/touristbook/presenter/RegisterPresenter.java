@@ -9,11 +9,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
+import com.neos.touristbook.App;
 import com.neos.touristbook.event.RegisterCallBack;
+import com.neos.touristbook.model.Account;
 import com.neos.touristbook.model.User;
 import com.neos.touristbook.utils.CommonUtils;
 
 public class RegisterPresenter extends BasePresenter<RegisterCallBack> {
+    public static final String CURRENT_ACCOUNT = "CURRENT_ACCOUNT";
     private FirebaseAuth mAuth;
 
     public RegisterPresenter(RegisterCallBack mCallback) {
@@ -40,17 +44,18 @@ public class RegisterPresenter extends BasePresenter<RegisterCallBack> {
             mCallback.error("Mật khâủ không trùng nhau");
             return;
         }
-
-        register(email, pass);
+        Account account = new Account(email, pass);
+        register(account);
     }
 
-    private void register(String email, String pass) {
-        mAuth.createUserWithEmailAndPassword(email, pass)
+    private void register(Account account) {
+        mAuth.createUserWithEmailAndPassword(account.getEmail(), account.getPassword())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+                            CommonUtils.getInstance().savePref(CURRENT_ACCOUNT, new Gson().toJson(account));
                             saveUser(user);
                         } else {
                             mCallback.registerFail();
@@ -62,7 +67,7 @@ public class RegisterPresenter extends BasePresenter<RegisterCallBack> {
     protected void saveUser(FirebaseUser data) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        User user = new User(data.getUid(), data.getEmail(), "");
+        User user = new User(data.getUid(), "", "",data.getEmail(),"");
         myRef.child("user").child(user.getId()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

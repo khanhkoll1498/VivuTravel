@@ -11,6 +11,7 @@ import com.neos.touristbook.utils.CommonUtils;
 import com.neos.touristbook.view.base.BaseFragment;
 
 public class RegisterFrg extends BaseFragment<RegisterPresenter> implements RegisterCallBack {
+    public static final String KEY_REGISTER_SUCCESS = "KEY_REGISTER_SUCCESS";
     private EditText edtEmail, edtPass, edtConfirmPass;
     public final static String TAG = RegisterFrg.class.getName();
 
@@ -26,15 +27,15 @@ public class RegisterFrg extends BaseFragment<RegisterPresenter> implements Regi
 
     @Override
     protected void initView() {
-        findViewById(R.id.bt_register, this);
+        findViewById(R.id.tv_register, this);
         edtEmail = findViewById(R.id.edt_email);
         edtPass = findViewById(R.id.edt_pass);
-        edtConfirmPass = findViewById(R.id.edt_confirm_pass);
+        edtConfirmPass = findViewById(R.id.edt_confirm);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.bt_register) {
+        if (v.getId() == R.id.tv_register) {
             mPresenter.checkValidation(edtEmail.getText().toString(),
                     edtPass.getText().toString(), edtConfirmPass.getText().toString());
         }
@@ -48,6 +49,7 @@ public class RegisterFrg extends BaseFragment<RegisterPresenter> implements Regi
     @Override
     public void registerSuccess() {
         CommonUtils.getInstance().toast("Đăng kí thành công");
+        mCallback.callback(KEY_REGISTER_SUCCESS, null);
     }
 
     @Override

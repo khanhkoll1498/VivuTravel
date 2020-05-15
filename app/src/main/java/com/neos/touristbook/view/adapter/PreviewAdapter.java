@@ -11,11 +11,13 @@ import com.neos.touristbook.view.base.BaseFragment;
 import com.neos.touristbook.view.event.OnActionCallback;
 import com.neos.touristbook.view.fragment.ItemPreviewFrg;
 
+import java.util.List;
+
 public class PreviewAdapter extends FragmentPagerAdapter implements OnActionCallback {
 
-    private String[] previewList;
+    private List<String> previewList;
 
-    public PreviewAdapter(FragmentManager fm, String[] previewList) {
+    public PreviewAdapter(FragmentManager fm, List<String> previewList) {
         super(fm);
         this.previewList = previewList;
     }
@@ -33,12 +35,12 @@ public class PreviewAdapter extends FragmentPagerAdapter implements OnActionCall
 
     @Override
     public int getCount() {
-        return previewList.length;
+        return previewList.size();
     }
 
     @Override
     public Fragment getItem(int position) {
-        BaseFragment fragment = new ItemPreviewFrg(previewList[position]);
+        BaseFragment fragment = new ItemPreviewFrg(previewList.get(position));
         fragment.setmCallback(this);
         return fragment;
     }
@@ -47,12 +49,6 @@ public class PreviewAdapter extends FragmentPagerAdapter implements OnActionCall
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         super.destroyItem(container, position, object);
     }
-
-    public void updateList(String[] previewList) {
-        this.previewList = previewList;
-        notifyDataSetChanged();
-    }
-
 
 
     @Override

@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.neos.touristbook.App;
 import com.neos.touristbook.R;
 import com.neos.touristbook.event.LoginCallBack;
+import com.neos.touristbook.model.Account;
 import com.neos.touristbook.model.User;
 import com.neos.touristbook.utils.CommonUtils;
 
@@ -74,7 +75,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                             FirebaseUser user = mAuth.getCurrentUser();
                             saveUser(user);
                         } else {
-                            mCallback.loginGGFailed();
+                            mCallback.loginFailed();
                         }
                     }
                 });
@@ -83,15 +84,30 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
     protected void saveUser(FirebaseUser data) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        User user = new User(data.getUid(), data.getDisplayName(), data.getPhotoUrl().toString());
+        User user = new User(data.getUid(), "", data.getPhotoUrl().toString(), data.getDisplayName(), "");
         myRef.child("user").child(user.getId()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    mCallback.loginGGSuccess();
+                    mCallback.loginSuccess();
                 }
             }
         });
     }
 
+    public void loginWithAccount(Account account) {
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.signInWithEmailAndPassword(account.getEmail(), account.getPassword())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            mCallback.loginSuccess();
+                        } else {
+                            mCallback.loginFailed();
+                        }
+                    }
+                });
+
+    }
 }

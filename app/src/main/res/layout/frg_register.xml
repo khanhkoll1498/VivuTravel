@@ -2,91 +2,86 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
+
+    android:background="#F0F1F3"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_60sdp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:src="@drawable/ic_symbol" />
+    <ImageView
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="@dimen/_125sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:src="@drawable/ic_launcher" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:fontFamily="@font/roboto_bold_italic"
-            android:gravity="center"
-            android:text="ViVu Travel"
-            android:textColor="@color/appColor"
-            android:textSize="@dimen/_20sdp" />
 
-    </LinearLayout>
 
     <EditText
-        android:singleLine="true"
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         android:background="@drawable/bg_corner"
-        android:drawablePadding="@dimen/_8sdp"
-        android:hint="E-mail"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="@dimen/_20sdp"
+        android:drawableTint="#909090"
+        android:hint="Email"
         android:paddingLeft="@dimen/_16sdp"
-        android:textColor="@color/appColor"
-        android:textColorHint="@color/appColor" />
+        android:singleLine="true"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#909090" />
 
     <EditText
-        android:inputType="textPassword"
-        android:singleLine="true"
         android:id="@+id/edt_pass"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         android:background="@drawable/bg_corner"
-        android:drawablePadding="@dimen/_8sdp"
-        android:hint="Password"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="@dimen/_20sdp"
+        android:drawableTint="#909090"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
         android:paddingLeft="@dimen/_16sdp"
-        android:textColor="@color/appColor"
-        android:textColorHint="@color/appColor" />
+        android:singleLine="true"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#909090" />
 
     <EditText
-        android:inputType="textPassword"
-        android:singleLine="true"
-        android:id="@+id/edt_confirm_pass"
+        android:id="@+id/edt_confirm"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         android:background="@drawable/bg_corner"
-        android:drawablePadding="@dimen/_8sdp"
-        android:hint="Confirm Password"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="@dimen/_20sdp"
+        android:drawableTint="#909090"
+        android:hint="Xác nhận mật khẩu"
+        android:inputType="textPassword"
         android:paddingLeft="@dimen/_16sdp"
-        android:textColor="@color/appColor"
-        android:textColorHint="@color/appColor" />
+        android:singleLine="true"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#909090" />
 
-    <Button
-        android:id="@+id/bt_register"
-        android:textSize="@dimen/_20sdp"
-        android:textColorHint="@color/colorWhite"
-        android:hint="Register"
-        android:layout_marginLeft="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_50sdp"
-        android:background="@drawable/bg_button_login"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"/>
-
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
+        android:backgroundTint="#EE6225"
+        android:gravity="center"
+        android:text="Đăng ký"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_14sdp"
+        android:textStyle="bold" />
 
 </LinearLayout>

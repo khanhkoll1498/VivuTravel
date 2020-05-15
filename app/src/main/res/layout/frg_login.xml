@@ -2,130 +2,158 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_login"
+    android:background="#F0F1F3"
     android:orientation="vertical">
 
-    <LinearLayout
+
+    <ImageView
+        android:layout_width="@dimen/_125sdp"
+        android:layout_height="@dimen/_125sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_60sdp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:src="@drawable/ic_symbol" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_marginTop="@dimen/_50sdp"
-            android:fontFamily="@font/roboto_bold_italic"
-            android:gravity="center"
-            android:text="ViVu Travel"
-            android:textColor="@color/appColor"
-            android:textSize="@dimen/_20sdp" />
-
-    </LinearLayout>
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         android:background="@drawable/bg_corner"
         android:drawableLeft="@drawable/ic_email"
-        android:drawablePadding="@dimen/_8sdp"
-        android:drawableTint="@color/appColor"
-        android:hint="E-mail"
+        android:drawablePadding="@dimen/_20sdp"
+        android:drawableTint="#909090"
+        android:hint="Email"
         android:paddingLeft="@dimen/_16sdp"
-        android:textColor="@color/appColor"
-        android:textColorHint="@color/appColor" />
+        android:singleLine="true"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#909090" />
 
     <EditText
         android:id="@+id/edt_pass"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginLeft="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_30sdp"
-        android:layout_marginRight="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp"
         android:background="@drawable/bg_corner"
         android:drawableLeft="@drawable/ic_password"
-        android:drawablePadding="@dimen/_8sdp"
-        android:drawableTint="@color/appColor"
-        android:elevation="@dimen/_100sdp"
-        android:hint="Password"
+        android:drawablePadding="@dimen/_20sdp"
+        android:drawableTint="#909090"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
         android:paddingLeft="@dimen/_16sdp"
-        android:textColorHint="@color/appColor" />
-
-    <Button
-        android:id="@+id/bt_sign_in"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginLeft="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_24sdp"
-        android:layout_marginRight="@dimen/_50sdp"
-        android:background="@drawable/bg_button_login"
-        android:hint="GO"
-        android:textColorHint="@color/colorWhite"
-        android:textSize="@dimen/_20sdp" />
+        android:singleLine="true"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="#909090" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:gravity="center"
-        android:text="Or \n Connect with"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/_15sdp" />
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="Bạn quên mật khẩu?"
+        android:textColor="#FA3308"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:weightSum="5">
-
-        <ImageView
-            android:id="@+id/iv_facebook"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_weight="2.5"
-            android:src="@drawable/ic_facebook" />
-
-        <ImageView
-            android:id="@+id/iv_google"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_weight="2.5"
-            android:src="@drawable/ic_google" />
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_margin="@dimen/_16sdp"
+        android:weightSum="2">
 
         <TextView
-            android:id="@+id/tv_sign_up"
+            android:id="@+id/tv_login"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="#EE6225"
+            android:gravity="center"
+            android:text="Đăng nhập"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="#4171C9"
+            android:gravity="center"
+            android:text="Đăng ký"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginRight="@dimen/_16sdp">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:text="Không có tài khoản? Đăng kí"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_12sdp" />
+            android:text="Hoặc đăng nhập với"
+            android:textColor="@color/colorBlack" />
 
-    </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:background="#CCC" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:src="@drawable/ic_facebook" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:text="Facebook"
+            android:textColor="#4A69A5"
+            android:textSize="@dimen/_14sdp" />
+
+        <ImageView
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:src="@drawable/ic_google" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:text="Google"
+            android:textColor="#D5524E"
+            android:textSize="@dimen/_14sdp" />
+    </LinearLayout>
 
 </LinearLayout>

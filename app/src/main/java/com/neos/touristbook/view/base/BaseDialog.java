@@ -65,17 +65,21 @@ abstract public class BaseDialog<T extends BasePresenter> extends Dialog impleme
         if (event != null) {
             v.setOnClickListener(event);
         }
-        if (v instanceof TextView) {
-            if (typeface == null) {
-                typeface = App.getInstance().getFontRegular();
-            }
-            ((TextView) v).setTypeface(typeface);
-        }
+//        if (v instanceof TextView) {
+//            if (typeface == null) {
+//                typeface = App.getInstance().getFontRegular();
+//            }
+//            ((TextView) v).setTypeface(typeface);
+//        }
         return v;
     }
 
 
     public <T extends View> T findViewById(int id, Typeface typeface) {
         return findViewById(id, null, typeface);
+    }
+
+    public <T extends View> T findViewById(int id) {
+        return findViewById(id, null, null);
     }
 }

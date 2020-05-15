@@ -5,11 +5,13 @@
     android:layout_margin="@dimen/_8sdp">
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_preview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/test" />
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_25sdp"
         android:layout_alignParentBottom="true"

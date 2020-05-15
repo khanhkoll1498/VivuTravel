@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.neos.touristbook.App;
 import com.neos.touristbook.StorageCommon;
 import com.neos.touristbook.presenter.BasePresenter;
@@ -34,6 +36,8 @@ abstract public class BaseFragment<T extends BasePresenter> extends Fragment imp
     protected void excuteHandler(Message msg) {
 
     }
+    protected FirebaseAuth mAuth;
+    protected FirebaseUser user;
 
     protected StorageCommon getStorageCommon() {
         return App.getInstance().getStorageCommon();
@@ -52,6 +56,8 @@ abstract public class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Nullable
     @Override
     public final View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance();
+        user=mAuth.getCurrentUser();
         rootView = inflater.inflate(getLayoutId(), container, false);
         initPresenter();
         initView();

@@ -25,7 +25,7 @@ import com.neos.touristbook.view.fragment.TourFrg;
 
 import java.lang.reflect.Constructor;
 
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements OnActionCallback {
+public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements OnActionCallback, View.OnClickListener {
     protected T mPresenter;
     public static DisplayMetrics displayMetrics;
 
@@ -36,6 +36,11 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
             return false;
         }
     });
+
+    @Override
+    public void onClick(View v) {
+
+    }
 
     protected final String[] TAG = new String[]{HomeFrg.TAG, TourFrg.TAG, ReviewFrg.TAG, FavouriteFrg.TAG, AccountFrg.TAG};
 
@@ -53,10 +58,14 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         setContentView(getLayoutId());
         initPresenter();
         initView();
-        displayMetrics = new DisplayMetrics();
-        getWindowManager()
-                .getDefaultDisplay()
-                .getMetrics(displayMetrics);
+        try {
+            displayMetrics = new DisplayMetrics();
+            getWindowManager()
+                    .getDefaultDisplay()
+                    .getMetrics(displayMetrics);
+        } catch (Exception e) {
+
+        }
 
     }
 

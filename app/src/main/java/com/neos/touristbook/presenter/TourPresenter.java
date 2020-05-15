@@ -3,6 +3,7 @@ package com.neos.touristbook.presenter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.neos.touristbook.event.TourCallback;
+import com.neos.touristbook.model.Review;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.utils.CommonUtils;
 
@@ -12,6 +13,7 @@ import java.util.Random;
 
 public class TourPresenter extends BasePresenter<TourCallback> {
     private static final String KEY_RECENT = "KEY_RECENT";
+    private static final String KEY_FAVORITE = "KEY_FAVORITE";
 
     public TourPresenter(TourCallback mCallback) {
         super(mCallback);
@@ -69,5 +71,70 @@ public class TourPresenter extends BasePresenter<TourCallback> {
     public void loadRecentList() {
         List<Tour> list = getRecentTourList();
         mCallback.onResultRecentList(list);
+    }
+
+    public void loadReviewList() {
+        List<Review> reviewList = getReviewList();
+        mCallback.onResultReviewList(reviewList);
+    }
+
+    private List<Review> getReviewList() {
+        String data = CommonUtils.getInstance().readFileFromAssets("review.json");
+        return new Gson().fromJson(data, new TypeToken<List<Review>>() {
+        }.getType());
+
+    }
+
+    public void checkFavorite(Tour tour) {
+        List<Tour> list = getFavoriteTourList();
+        if (!exits(tour, list)) {
+            list.add(0, tour);
+            mCallback.isFavorite(true);
+        } else {
+            removeTour(tour, list);
+            mCallback.isFavorite(false);
+        }
+        CommonUtils.getInstance().savePref(KEY_FAVORITE, new Gson().toJson(list));
+    }
+
+    public void detackFavorite(Tour tour) {
+        List<Tour> list = getFavoriteTourList();
+        if (!exits(tour, list)) {
+            mCallback.isFavorite(false);
+        } else {
+            mCallback.isFavorite(true);
+        }
+    }
+
+    private void removeTour(Tour tour, List<Tour> list) {
+        for (int i = 0; i < list.size(); i++) {
+            if (tour.getId().equals(list.get(i).getId())) {
+                list.remove(i);
+                break;
+            }
+        }
+    }
+
+    private boolean exits(Tour tour, List<Tour> list) {
+        for (int i = 0; i < list.size(); i++) {
+            if (tour.getId().equals(list.get(i).getId())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private List<Tour> getFavoriteTourList() {
+        String data = CommonUtils.getInstance().getValuePref(KEY_FAVORITE, "");
+        if (data.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return new Gson().fromJson(data, new TypeToken<List<Tour>>() {
+        }.getType());
+    }
+
+    public void loadFavoriteList() {
+        List<Tour> list = getFavoriteTourList();
+        mCallback.onResultTourList(list);
     }
 }

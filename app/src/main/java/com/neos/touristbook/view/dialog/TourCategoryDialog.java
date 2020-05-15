@@ -1,6 +1,7 @@
 package com.neos.touristbook.view.dialog;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import com.neos.touristbook.R;
 import com.neos.touristbook.event.TourCallback;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.presenter.TourPresenter;
+import com.neos.touristbook.view.activity.DetailTourAct;
 import com.neos.touristbook.view.adapter.TourAdapter;
 import com.neos.touristbook.view.base.BaseDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
@@ -20,6 +22,8 @@ import com.neos.touristbook.view.fragment.HomeFrg;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.neos.touristbook.view.adapter.TourAdapter.KEY_CLICK_ITEM;
 
 public class TourCategoryDialog extends BaseDialog<TourPresenter> implements OnActionCallback, TourCallback {
 
@@ -71,7 +75,15 @@ public class TourCategoryDialog extends BaseDialog<TourPresenter> implements OnA
 
     @Override
     public void callback(String key, Object data) {
-
+        if (key.equals(KEY_CLICK_ITEM)) {
+            Tour tour = (Tour) data;
+            showDetailTour(tour);
+        }
+    }
+    private void showDetailTour(Tour tour) {
+        Intent intent = new Intent(getContext(), DetailTourAct.class);
+        intent.putExtra("data", tour);
+        getContext().startActivity(intent);
     }
 
     @Override
