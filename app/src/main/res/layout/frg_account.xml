@@ -2,82 +2,211 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorGray">
+    android:layout_margin="@dimen/_8sdp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
-        android:background="@color/colorWhite"
+        android:fontFamily="@font/nunito_regular"
         android:gravity="center"
         android:text="Tài khoản của tôi"
         android:textColor="@color/colorBlack"
-        android:textSize="@dimen/_18sdp">
+        android:textSize="@dimen/_18sdp" />
 
-    </TextView>
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/_17sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
         android:orientation="horizontal"
-        android:layout_height="@dimen/_60sdp">
+        android:padding="@dimen/_5sdp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_avatar"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_60sdp"
             android:layout_height="match_parent"
             android:src="@drawable/test" />
+
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:text="Nhật Ánh"
-            android:textSize="@dimen/_16sdp"
-            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_toRightOf="@+id/iv_avatar"
+            android:fontFamily="@font/nunito_regular"
             android:gravity="center_vertical"
-            android:layout_height="100dp">
+            android:text="Nhật Ánh"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_16sdp" />
 
-        </TextView>
-    </LinearLayout>
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:src="@drawable/ic_chevron"
+            android:tint="#9E9E9E" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/_17sdp"
-        android:orientation="vertical"
-        android:layout_height="@dimen/_200sdp">
-<TextView
-    android:layout_width="wrap_content"
-    android:text="Thông tin liên hệ"
-    android:textSize="@dimen/_13sdp"
-    android:textColor="@color/colorBlack"
-    android:layout_height="wrap_content"></TextView>
-        <
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/_17sdp"
-        android:orientation="horizontal"
-        android:layout_height="@dimen/_50sdp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
+        android:orientation="vertical">
+
         <TextView
-            android:layout_width="@dimen/_120sdp"
-            android:text="Tour đã đặt"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="@dimen/_15sdp"
-            android:layout_height="80dp"></TextView>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Thông tin liên hệ"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="@color/browser_actions_bg_grey"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Họ tên"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Họ tên"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="@color/browser_actions_bg_grey"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Email"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Họ tên"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="@color/browser_actions_bg_grey"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Số điện thoại"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Họ tên"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
 
 
     </LinearLayout>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/_17sdp"
-        android:background="@color/colorOrange"
-        android:text="Đăng xuất"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"
-        android:layout_height="@dimen/_40sdp">
 
-    </Button>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_regular"
+            android:gravity="center"
+            android:text="Tour đã đặt"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp" />
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:src="@drawable/ic_chevron"
+            android:tint="#9E9E9E" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_regular"
+            android:gravity="center"
+            android:text="Đăng xuất"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp" />
+
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:src="@drawable/ic_chevron"
+            android:tint="#9E9E9E" />
+    </RelativeLayout>
+
 </LinearLayout>

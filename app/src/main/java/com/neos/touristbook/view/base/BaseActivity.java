@@ -6,12 +6,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.neos.touristbook.App;
 import com.neos.touristbook.R;
 import com.neos.touristbook.StorageCommon;
@@ -79,7 +82,18 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
         return findViewById(id, event, null);
     }
+    public void showLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.VISIBLE);
+        rlLoading.setOnClickListener(this);
+        ImageView ivLoading=rlLoading.findViewById(R.id.iv_loading);
+        Glide.with(this).load(R.drawable.loading).into(ivLoading);
+    }
 
+    public void hideLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.GONE);
+    }
     public <T extends View> T findViewById(int id, View.OnClickListener event, Typeface typeface) {
         T v = super.findViewById(id);
         if (event != null) {

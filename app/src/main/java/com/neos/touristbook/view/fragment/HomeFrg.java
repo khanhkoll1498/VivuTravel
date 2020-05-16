@@ -3,11 +3,13 @@ package com.neos.touristbook.view.fragment;
 import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.neos.touristbook.R;
 import com.neos.touristbook.event.TourCallback;
 import com.neos.touristbook.model.Image;
@@ -58,6 +60,7 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
         initPreView();
         initHotTour();
         initRecentTour();
+
     }
 
     @Override
@@ -156,6 +159,7 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
             showDetailTour(tour);
         }
     }
+
     private void showDetailTour(Tour tour) {
         Intent intent = new Intent(getContext(), DetailTourAct.class);
         intent.putExtra("data", tour);

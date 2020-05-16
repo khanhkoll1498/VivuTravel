@@ -1,6 +1,7 @@
 package com.neos.touristbook.view.dialog;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 
@@ -23,6 +24,11 @@ public class BookTourDialog extends BaseDialog {
     @Override
     protected void initPresenter() {
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.dialog_book_tour;
     }
 
     @Override
@@ -55,19 +61,23 @@ public class BookTourDialog extends BaseDialog {
     }
 
     private void confirmTour() {
-        TourOrder tourOrder = new TourOrder(tour, edtName.getText().toString(),
-                edtAddress.getText().toString(),
-                edtEmail.getText().toString(), edtPhone.getText().toString(),
-                Integer.parseInt(edtNumPerson.getText().toString().trim()));
-        ConfirmTourDialog dialog=new ConfirmTourDialog(getContext(),R.style.AppTheme);
-        dialog.setTourOrder(tourOrder);
-        dialog.show();
+        showLoading();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                TourOrder tourOrder = new TourOrder(tour, edtName.getText().toString(),
+                        edtAddress.getText().toString(),
+                        edtEmail.getText().toString(), edtPhone.getText().toString(),
+                        Integer.parseInt(edtNumPerson.getText().toString().trim()));
+                ConfirmTourDialog dialog = new ConfirmTourDialog(getContext(), R.style.AppTheme);
+                dialog.setTourOrder(tourOrder);
+                dialog.show();
+                hideLoading();
+            }
+        }, 2000);
+
     }
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.dialog_book_tour;
-    }
 
     public void setTour(Tour tour) {
         this.tour = tour;

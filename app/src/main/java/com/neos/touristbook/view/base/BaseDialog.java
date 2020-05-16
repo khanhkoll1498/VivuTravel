@@ -6,16 +6,20 @@ import android.graphics.Typeface;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
 import com.neos.touristbook.App;
+import com.neos.touristbook.R;
 import com.neos.touristbook.StorageCommon;
 import com.neos.touristbook.presenter.BasePresenter;
 import com.neos.touristbook.view.event.OnActionCallback;
 
-abstract public class BaseDialog<T extends BasePresenter> extends Dialog implements View.OnClickListener{
+abstract public class BaseDialog<T extends BasePresenter> extends Dialog implements View.OnClickListener {
     protected T mPresenter;
     protected OnActionCallback mCallback;
     protected Handler mHandler = new Handler(new Handler.Callback() {
@@ -74,6 +78,18 @@ abstract public class BaseDialog<T extends BasePresenter> extends Dialog impleme
         return v;
     }
 
+    public void showLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.VISIBLE);
+        rlLoading.setOnClickListener(this);
+        ImageView ivLoading=rlLoading.findViewById(R.id.iv_loading);
+        Glide.with(getContext()).load(R.drawable.loading).into(ivLoading);
+    }
+
+    public void hideLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.GONE);
+    }
 
     public <T extends View> T findViewById(int id, Typeface typeface) {
         return findViewById(id, null, typeface);

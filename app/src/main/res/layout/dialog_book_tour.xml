@@ -264,4 +264,6 @@
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/_12sdp"
         android:textStyle="bold" />
+    <include layout="@layout/loading" />
+
 </RelativeLayout>

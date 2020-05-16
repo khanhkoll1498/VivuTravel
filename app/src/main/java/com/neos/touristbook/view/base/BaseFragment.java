@@ -8,14 +8,18 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.neos.touristbook.App;
+import com.neos.touristbook.R;
 import com.neos.touristbook.StorageCommon;
 import com.neos.touristbook.presenter.BasePresenter;
 import com.neos.touristbook.view.event.OnActionCallback;
@@ -52,7 +56,18 @@ abstract public class BaseFragment<T extends BasePresenter> extends Fragment imp
         super.onAttach(context);
         this.context = context;
     }
+    public void showLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.VISIBLE);
+        rlLoading.setOnClickListener(this);
+        ImageView ivLoading=rlLoading.findViewById(R.id.iv_loading);
+        Glide.with(getContext()).load(R.drawable.loading).into(ivLoading);
+    }
 
+    public void hideLoading() {
+        RelativeLayout rlLoading=findViewById(R.id.rl_loading);
+        rlLoading.setVisibility(View.GONE);
+    }
     @Nullable
     @Override
     public final View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -27,11 +27,11 @@ public class MainActivity extends BaseActivity {
     private void initBottomBar() {
         bottomBar = findViewById(R.id.bottom_navigation_bar);
         bottomBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Home").setActiveColorResource(R.color.appColor))
-                .addItem(new BottomNavigationItem(R.drawable.ic_tour, "Tour").setActiveColorResource(R.color.colorRed))
-                .addItem(new BottomNavigationItem(R.drawable.ic_review, "Review").setActiveColorResource(R.color.colorPurple))
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Home").setActiveColorResource(R.color.colorLightBlue))
+                .addItem(new BottomNavigationItem(R.drawable.ic_tour, "Tour").setActiveColorResource(R.color.colorLightBlue))
+                .addItem(new BottomNavigationItem(R.drawable.ic_review, "Review").setActiveColorResource(R.color.colorLightBlue))
                 .addItem(new BottomNavigationItem(R.drawable.ic_favourite, "favorite").setActiveColorResource(R.color.colorLightBlue))
-                .addItem(new BottomNavigationItem(R.drawable.ic_account, "Account").setActiveColorResource(R.color.colorGreen))
+                .addItem(new BottomNavigationItem(R.drawable.ic_account, "Account").setActiveColorResource(R.color.colorLightBlue))
                 .setFirstSelectedPosition(0)
                 .initialise();
         bottomBar.setTabSelectedListener(new OnCommonCallback() {
