@@ -6,6 +6,7 @@
     android:background="@color/colorGray">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:background="@color/colorWhite"
@@ -15,9 +16,68 @@
         android:textSize="@dimen/_18sdp">
 
     </TextView>
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_height="wrap_content">
-    </TextView>
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/_60sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/test" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:text="Nhật Ánh"
+            android:textSize="@dimen/_16sdp"
+            android:textColor="@color/colorBlack"
+            android:gravity="center_vertical"
+            android:layout_height="100dp">
+
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:orientation="vertical"
+        android:layout_height="@dimen/_200sdp">
+<TextView
+    android:layout_width="wrap_content"
+    android:text="Thông tin liên hệ"
+    android:textSize="@dimen/_13sdp"
+    android:textColor="@color/colorBlack"
+    android:layout_height="wrap_content"></TextView>
+        <
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/_50sdp">
+        <TextView
+            android:layout_width="@dimen/_120sdp"
+            android:text="Tour đã đặt"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:layout_height="80dp"></TextView>
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:background="@color/colorOrange"
+        android:text="Đăng xuất"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        android:layout_height="@dimen/_40sdp">
+
+    </Button>
 </LinearLayout>
