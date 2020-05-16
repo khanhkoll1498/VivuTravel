@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_bg_app">
@@ -117,13 +119,35 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_14sdp" />
 
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@+id/vp_preview"
+                <RelativeLayout
+
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_180sdp"
-                    android:layout_marginLeft="@dimen/_8sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginRight="@dimen/_8sdp" />
+                    android:layout_height="@dimen/_180sdp">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/vp_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp" />
+
+                    <com.rd.PageIndicatorView
+                        android:id="@+id/pageIndicatorView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        app:piv_animationType="slide"
+                        app:piv_dynamicCount="true"
+                        app:piv_interactiveAnimation="true"
+                        app:piv_selectedColor="@color/colorWhite"
+                        app:piv_unselectedColor="@color/colorTransparent50"
+                        attrs:piv_padding="@dimen/_4sdp"
+                        attrs:piv_radius="@dimen/_3sdp" />
+                </RelativeLayout>
+
             </LinearLayout>
 
             <LinearLayout

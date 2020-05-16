@@ -20,6 +20,7 @@ import com.neos.touristbook.view.adapter.TourAdapter;
 import com.neos.touristbook.view.base.BaseFragment;
 import com.neos.touristbook.view.dialog.TourCategoryDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
+import com.rd.PageIndicatorView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,7 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
     private List<Tour> tourHotList;
     private TourAdapter adapterRecent;
     private List<Tour> recentList;
+    private PageIndicatorView pageIndicatorView;
 
     @Override
     protected void initPresenter() {
@@ -100,6 +102,8 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
     }
 
     private void initPreView() {
+        pageIndicatorView = findViewById(R.id.pageIndicatorView);
+        pageIndicatorView.setCount(3);
         vpPreview = (ViewPager) findViewById(R.id.vp_preview);
         List<String> imageList = new ArrayList<>();
         imageList.add("//android_asset/preview/preview1.jpg");
@@ -107,6 +111,23 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
         imageList.add("//android_asset/preview/preview3.jpg");
         adapter = new PreviewAdapter(getChildFragmentManager(), imageList);
         vpPreview.setAdapter(adapter);
+        vpPreview.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                pageIndicatorView.setSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
         smoothPreview();
     }
 

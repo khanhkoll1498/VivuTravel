@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#5B1E01</color>
     <color name="colorPrimaryDark">#4fc3f7</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#9A9B9D</color>
     <color name="colorBGBox">#5B1E01</color>
     <color name="colorWhite">#fff</color>
     <color name="appColor">#754FE3</color>
@@ -13,4 +13,7 @@
     <color name="color_bg_app">#EDEDED</color>
     <color name="colorBlack">#000</color>
     <color name="colorOrange">#E57E31</color>
+    <color name="colorGray">#F0F1F3</color>
+    <color name="colorTransparent50">#80FFFFFF</color>
+
 </resources>

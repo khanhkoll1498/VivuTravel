@@ -45,6 +45,7 @@ dependencies {
     implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
     implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
     implementation 'com.ashokvarma.android:bottom-navigation-bar:2.2.0'
-
+    implementation 'com.android.support:design:29.0.2'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
 
 }

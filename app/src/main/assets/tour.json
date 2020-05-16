@@ -322,16 +322,16 @@
     "id": "10",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Nghe%20An/NgheAn_HoangTru_QueNgoaiBac_1208695489.jpg"
+        "image": "/uploads/destination/TrongNuoc/Nghe%20An/NgheAn_HoangTru_QueNgoaiBac_1208695489.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Nghe%20An/NgheAn-DiTichQuangTrung.jpg"
+        "image": "/uploads/destination/TrongNuoc/Nghe%20An/NgheAn-DiTichQuangTrung.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Quangbinh/QuangBinh-TuongDaiMeSuot.jpg"
+        "image": "/uploads/destination/TrongNuoc/Quangbinh/QuangBinh-TuongDaiMeSuot.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Nghe%20An/NgheAn-DiTichQuangTrung.jpg"
+        "image": "/uploads/destination/TrongNuoc/Nghe%20An/NgheAn-DiTichQuangTrung.jpg"
       }
     ],
     "title": "TOUR NGHỆ AN ",
@@ -358,16 +358,16 @@
     "id": "11",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Nghe%20An/NgheAn_LangSe_QueNoiBac_1208697643.jpg"
+        "image": "/uploads/destination/TrongNuoc/Nghe%20An/NgheAn_LangSe_QueNoiBac_1208697643.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Ninhbinh/Ngo-Dong-River-at-the-Tam-Coc_624698120.jpg"
+        "image": "/uploads/destination/TrongNuoc/Ninhbinh/Ngo-Dong-River-at-the-Tam-Coc_624698120.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/ba-dinh-square-hanoi.jpg"
+        "image": "/uploads/destination/TrongNuoc/Hanoi/ba-dinh-square-hanoi.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Hanoi/Hoan-Kiem-lake-with-the-famous-turtle-pagoda_559845319.jpg"
+        "image": "/uploads/destination/TrongNuoc/Hanoi/Hoan-Kiem-lake-with-the-famous-turtle-pagoda_559845319.jpg"
       }
     ],
     "title": "TOUR NINH BÌNH ",
@@ -394,16 +394,16 @@
     "id": "12",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/BMT/BMT_1558178663.jpg"
+        "image": "/uploads/destination/TrongNuoc/BMT/BMT_1558178663.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/BMT/dray-nur-waterfall.jpg"
+        "image": "/uploads/destination/TrongNuoc/BMT/dray-nur-waterfall.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/BMT/dray-nur-waterfall.jpg"
+        "image": "/uploads/destination/TrongNuoc/BMT/dray-nur-waterfall.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Dalat/Truc-Lam-longstanding-ancient-works-in-Dalat-Vietnam_430980358.jpg"
+        "image": "/uploads/destination/TrongNuoc/Dalat/Truc-Lam-longstanding-ancient-works-in-Dalat-Vietnam_430980358.jpg"
       }
     ],
     "title": "TOUR TÂY NGUYÊN ",
@@ -430,10 +430,10 @@
     "id": "13",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Condao/Sunset-at-Bai-nhat-beach.jpg"
+        "image": "/uploads/destination/TrongNuoc/Condao/Sunset-at-Bai-nhat-beach.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Condao/Infamous-Tiger-cages-in-Con-Dao-Prison.jpg"
+        "image": "/uploads/destination/TrongNuoc/Condao/Infamous-Tiger-cages-in-Con-Dao-Prison.jpg"
       },
       {
         "image": "/uploads/destination/TrongNuoc/Condao/con-dao-beach.jpg"
@@ -460,16 +460,16 @@
     "id": "14",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Halong/Sun-World-Ha-Long-Park_1095164702.jpg"
+        "image": "/uploads/destination/TrongNuoc/Halong/Sun-World-Ha-Long-Park_1095164702.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Halong/Ha-Long-Bay-Vietnam_78891328.jpg"
+        "image": "/uploads/destination/TrongNuoc/Halong/Ha-Long-Bay-Vietnam_78891328.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/sapa/Fansipan_706797802.jpg"
+        "image": "/uploads/destination/TrongNuoc/mienbac/sapa/Fansipan_706797802.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/mienbac/sapa/Ham-Rong-mountain_1034712658.jpg"
+        "image": "/uploads/destination/TrongNuoc/mienbac/sapa/Ham-Rong-mountain_1034712658.jpg"
       }
     ],
     "title": "TOUR HẠ LONG ",
@@ -499,13 +499,13 @@
     "id": "15",
     "imageList": [
       {
-        "image": "https://www.saigontourist.net/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_676759177.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_676759177.jpg"
       },
       {
-        "image": "https://www.saigontourist.net/uploads/destination/TrongNuoc/DaNang/chua%20Cau-Hoi%20An.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/chua%20Cau-Hoi%20An.jpg"
       },
       {
-        "image": "https://www.saigontourist.net/uploads/destination/TrongNuoc/DaNang/Ba-Na-Hills-Danang-Vietnam_510046753.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Ba-Na-Hills-Danang-Vietnam_510046753.jpg"
       },
       {
         "image": "/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_676774576.jpg"
@@ -535,22 +535,22 @@
     "id": "16",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Quangbinh/hien-luong-bridge-over-ben-hai-river.jpg"
+        "image": "/uploads/destination/TrongNuoc/Quangbinh/hien-luong-bridge-over-ben-hai-river.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_770996074.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_770996074.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/DaNang/Ba-Na-Hills-Danang-Vietnam_510046753.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Ba-Na-Hills-Danang-Vietnam_510046753.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Hue/HoiAn/Hoi-An_361749332.jpg"
+        "image": "/uploads/destination/TrongNuoc/Hue/HoiAn/Hoi-An_361749332.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Hue/thien-mu-pagoda-hue.jpg"
+        "image": "/uploads/destination/TrongNuoc/Hue/thien-mu-pagoda-hue.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/Halong/bai-chay-bridge.jpg"
+        "image": "/uploads/destination/TrongNuoc/Halong/bai-chay-bridge.jpg"
       }
     ],
     "title": "TOUR QUẢNG BÌNH  ",
@@ -583,13 +583,13 @@
     "id": "17",
     "imageList": [
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/DaNang/chua%20Cau-Hoi%20An.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/chua%20Cau-Hoi%20An.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/DaNang/Danang-International-Fireworks_373795417.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Danang-International-Fireworks_373795417.jpg"
       },
       {
-        "image": "https://saigontourist.net/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_676774576.jpg"
+        "image": "/uploads/destination/TrongNuoc/DaNang/Dragon-River-Bridge_676774576.jpg"
       }
     ],
     "title": "TOUR HỘI AN  ",

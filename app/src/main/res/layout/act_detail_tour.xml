@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -51,11 +53,31 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/vp_preview"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_180sdp"
-                android:layout_margin="@dimen/_2sdp" />
+                android:layout_height="@dimen/_180sdp">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_2sdp" />
+
+                <com.rd.PageIndicatorView
+                    android:id="@+id/pageIndicatorView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:piv_animationType="slide"
+                    app:piv_dynamicCount="true"
+                    app:piv_interactiveAnimation="true"
+                    app:piv_selectedColor="@color/colorWhite"
+                    app:piv_unselectedColor="@color/colorTransparent50"
+                    attrs:piv_padding="@dimen/_4sdp"
+                    attrs:piv_radius="@dimen/_3sdp" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/tv_address"
@@ -127,12 +149,12 @@
     </androidx.core.widget.NestedScrollView>
 
     <RelativeLayout
-        android:background="@drawable/bg_corner_8dp"
         android:id="@+id/rl_bottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_30sdp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="@dimen/_8sdp">
+        android:layout_margin="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp">
 
         <TextView
             android:id="@+id/tv_price2"
@@ -147,6 +169,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tv_book_tour"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_25sdp"
             android:layout_alignParentRight="true"
