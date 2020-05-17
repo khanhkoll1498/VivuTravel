@@ -7,7 +7,9 @@ import com.neos.touristbook.view.base.BaseActivity;
 import com.neos.touristbook.view.fragment.LoginFrg;
 import com.neos.touristbook.view.fragment.RegisterFrg;
 
+import static com.neos.touristbook.view.fragment.LoginFrg.KEY_HIDE_LOADING;
 import static com.neos.touristbook.view.fragment.LoginFrg.KEY_LOGIN_SUCCESS;
+import static com.neos.touristbook.view.fragment.LoginFrg.KEY_SHOW_LOADING;
 import static com.neos.touristbook.view.fragment.RegisterFrg.KEY_REGISTER_SUCCESS;
 
 public class LoginAct extends BaseActivity {
@@ -39,6 +41,10 @@ public class LoginAct extends BaseActivity {
         } else if (key.equals(KEY_LOGIN_SUCCESS)) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
+        } else if (key.equals(KEY_SHOW_LOADING)) {
+            showLoading();
+        } else if (key.equals(KEY_HIDE_LOADING)) {
+            hideLoading();
         }
     }
 
@@ -51,4 +57,6 @@ public class LoginAct extends BaseActivity {
         currentTag = LoginFrg.TAG;
         showFragment(currentTag);
     }
+
+
 }

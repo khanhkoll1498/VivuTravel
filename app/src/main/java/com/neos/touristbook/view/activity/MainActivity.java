@@ -1,10 +1,16 @@
 package com.neos.touristbook.view.activity;
 
+import android.Manifest;
+import android.content.Intent;
+
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.google.firebase.auth.FirebaseAuth;
 import com.neos.touristbook.R;
 import com.neos.touristbook.view.base.BaseActivity;
 import com.neos.touristbook.view.event.OnCommonCallback;
+
+import static com.neos.touristbook.view.fragment.AccountFrg.KEY_SIGN_OUT;
 
 public class MainActivity extends BaseActivity {
     private BottomNavigationBar bottomBar;
@@ -16,6 +22,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initPresenter() {
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
     }
 
     @Override
@@ -48,7 +60,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void callback(String key, Object data) {
-
+        if (key.equals(KEY_SIGN_OUT)) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(this, LoginAct.class));
+            finish();
+        }
     }
 
 }

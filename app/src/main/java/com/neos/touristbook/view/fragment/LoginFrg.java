@@ -22,6 +22,8 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
     public final static String TAG = LoginFrg.class.getName();
     public static final String KEY_TO_REGISTER = "KEY_TO_REGISTER";
     public static final String KEY_LOGIN_SUCCESS = "KEY_LOGIN_SUCCESS";
+    public static final String KEY_SHOW_LOADING = "KEY_SHOW_LOADING";
+    public static final String KEY_HIDE_LOADING = "KEY_HIDE_LOADING";
     private EditText edtEmail, edtPass;
 
     @Override
@@ -63,6 +65,7 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
         } else if (v.getId() == R.id.tv_login) {
             Account account = new Account(edtEmail.getText().toString(), edtPass.getText().toString());
             mPresenter.loginWithAccount(account);
+            mCallback.callback(KEY_SHOW_LOADING,null);
         }
     }
 
@@ -80,6 +83,7 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
     @Override
     public void loginFailed() {
         CommonUtils.getInstance().toast("Đăng nhập không thành công!");
+        mCallback.callback(KEY_HIDE_LOADING,null);
     }
 
     @Override

@@ -84,7 +84,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
     protected void saveUser(FirebaseUser data) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        User user = new User(data.getUid(), "", data.getPhotoUrl().toString(), data.getDisplayName(), "");
+        User user = new User(data.getUid(), data.getDisplayName(), data.getPhotoUrl().toString(), data.getEmail(), "");
         myRef.child("user").child(user.getId()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

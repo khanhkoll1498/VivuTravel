@@ -23,7 +23,7 @@ import java.util.List;
 
 public class TourAdapter extends BaseAdapter {
     public static final String KEY_CLICK_ITEM = "KEY_CLICK_ITEM";
-    public static final Object BASE_URL = "https://www.saigontourist.net/";
+    public static final String BASE_URL = "https://www.saigontourist.net/";
     private List<Tour> mList;
     private boolean isPreview = true;
 
@@ -52,7 +52,7 @@ public class TourAdapter extends BaseAdapter {
         }
         holder.tvPrice.setText(item.getPrice());
         holder.tvTourName.setText(item.getTitle());
-        Glide.with(mContext).load(BASE_URL + item.getImageList().get(0).getImage()).into(holder.ivPreview);
+        Glide.with(mContext).load(item.getImageList().get(0).getImage()).into(holder.ivPreview);
         holder.itemView.setTag(item);
     }
 

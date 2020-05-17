@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:src="@drawable/ic_person" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_24sdp"
+        android:gravity="center"
+        android:hint="Tên hiển thị" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:background="@drawable/bg_corner_8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="Thông tin liên hệ"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/_14sdp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="@color/browser_actions_bg_grey"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Email"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:background="@drawable/bg_corner_8dp"
+            android:backgroundTint="@color/browser_actions_bg_grey"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Số điện thoại"
+                android:textSize="@dimen/_12sdp" />
+
+            <EditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_update_profile"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_corner_8dp"
+        android:backgroundTint="@color/colorOrange"
+        android:gravity="center"
+        android:text="Cập nhật thông tin"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold" />
+
+</LinearLayout>

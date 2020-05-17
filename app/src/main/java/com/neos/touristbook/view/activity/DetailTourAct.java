@@ -25,7 +25,6 @@ import com.rd.PageIndicatorView;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.neos.touristbook.view.adapter.TourAdapter.BASE_URL;
 import static com.neos.touristbook.view.dialog.BookTourDialog.KEY_GO_HOME;
 
 public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActionCallback, TourCallback {
@@ -104,7 +103,7 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         vpPreview = (ViewPager) findViewById(R.id.vp_preview);
         List<String> imageList = new ArrayList<>();
         for (int i = 0; i < tour.getImageList().size(); i++) {
-            imageList.add(BASE_URL + tour.getImageList().get(i).getImage());
+            imageList.add(tour.getImageList().get(i).getImage());
         }
         adapter = new PreviewAdapter(getSupportFragmentManager(), imageList);
         vpPreview.setAdapter(adapter);

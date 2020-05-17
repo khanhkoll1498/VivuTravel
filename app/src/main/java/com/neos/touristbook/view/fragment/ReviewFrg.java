@@ -1,5 +1,7 @@
 package com.neos.touristbook.view.fragment;
 
+import android.view.View;
+
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +13,7 @@ import com.neos.touristbook.utils.CommonUtils;
 import com.neos.touristbook.view.adapter.ReviewAdapter;
 import com.neos.touristbook.view.base.BaseFragment;
 import com.neos.touristbook.view.dialog.DetailReviewDialog;
+import com.neos.touristbook.view.dialog.SearchDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
 
 import java.util.ArrayList;
@@ -37,6 +40,7 @@ public class ReviewFrg extends BaseFragment<TourPresenter> implements TourCallba
     }
 
     private void initReview() {
+        findViewById(R.id.edt_search, this);
         mList = new ArrayList<>();
         RecyclerView rvReview = (RecyclerView) findViewById(R.id.rv_review);
         rvReview.setLayoutManager(new GridLayoutManager(getContext(), 2));
@@ -45,6 +49,18 @@ public class ReviewFrg extends BaseFragment<TourPresenter> implements TourCallba
         rvReview.setAdapter(adapter);
         mPresenter.loadReviewList();
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId()==R.id.edt_search){
+            searchTour();
+        }
+    }
+    private void searchTour() {
+        SearchDialog dialog = new SearchDialog(getContext(), R.style.AppTheme);
+        dialog.show();
+    }
+
 
     @Override
     public void onResultReviewList(List<Review> reviewList) {

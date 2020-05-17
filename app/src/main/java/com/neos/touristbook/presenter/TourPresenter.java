@@ -137,4 +137,20 @@ public class TourPresenter extends BasePresenter<TourCallback> {
         List<Tour> list = getFavoriteTourList();
         mCallback.onResultTourList(list);
     }
+
+    public void searchTour(String text) {
+        List<Tour> tourList = getAllTour();
+        List<Tour> resultList = searchTour(text, tourList);
+        mCallback.onResultTourList(resultList);
+    }
+
+    private List<Tour> searchTour(String text, List<Tour> tourList) {
+        List<Tour> list = new ArrayList<>();
+        for (int i = 0; i < tourList.size(); i++) {
+            if (tourList.get(i).getTitle().toLowerCase().contains(text.toLowerCase())){
+                list.add(tourList.get(i));
+            }
+        }
+        return list;
+    }
 }

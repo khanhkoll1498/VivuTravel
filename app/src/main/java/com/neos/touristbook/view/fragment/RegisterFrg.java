@@ -10,6 +10,9 @@ import com.neos.touristbook.presenter.RegisterPresenter;
 import com.neos.touristbook.utils.CommonUtils;
 import com.neos.touristbook.view.base.BaseFragment;
 
+import static com.neos.touristbook.view.fragment.LoginFrg.KEY_HIDE_LOADING;
+import static com.neos.touristbook.view.fragment.LoginFrg.KEY_SHOW_LOADING;
+
 public class RegisterFrg extends BaseFragment<RegisterPresenter> implements RegisterCallBack {
     public static final String KEY_REGISTER_SUCCESS = "KEY_REGISTER_SUCCESS";
     private EditText edtEmail, edtPass, edtConfirmPass;
@@ -36,24 +39,30 @@ public class RegisterFrg extends BaseFragment<RegisterPresenter> implements Regi
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.tv_register) {
+            mCallback.callback(KEY_SHOW_LOADING,null);
+
             mPresenter.checkValidation(edtEmail.getText().toString(),
                     edtPass.getText().toString(), edtConfirmPass.getText().toString());
+
         }
     }
 
     @Override
     public void error(String str) {
         Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
+        mCallback.callback(KEY_HIDE_LOADING,null);
     }
 
     @Override
     public void registerSuccess() {
         CommonUtils.getInstance().toast("Đăng kí thành công");
         mCallback.callback(KEY_REGISTER_SUCCESS, null);
+
     }
 
     @Override
     public void registerFail() {
         CommonUtils.getInstance().toast("Đăng kí thất bại");
+        mCallback.callback(KEY_HIDE_LOADING,null);
     }
 }

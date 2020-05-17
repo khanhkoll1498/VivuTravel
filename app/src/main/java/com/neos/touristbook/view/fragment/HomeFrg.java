@@ -20,6 +20,7 @@ import com.neos.touristbook.view.activity.DetailTourAct;
 import com.neos.touristbook.view.adapter.PreviewAdapter;
 import com.neos.touristbook.view.adapter.TourAdapter;
 import com.neos.touristbook.view.base.BaseFragment;
+import com.neos.touristbook.view.dialog.SearchDialog;
 import com.neos.touristbook.view.dialog.TourCategoryDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
 import com.rd.PageIndicatorView;
@@ -57,15 +58,18 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
         findViewById(R.id.ln_central, this);
         findViewById(R.id.ln_northern, this);
         findViewById(R.id.ln_south, this);
+        findViewById(R.id.edt_search, this);
         initPreView();
         initHotTour();
         initRecentTour();
-
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.edt_search:
+                searchTour();
+                break;
             case R.id.ln_northern:
                 loadTour(KEY_NOTHERN);
                 break;
@@ -76,6 +80,11 @@ public class HomeFrg extends BaseFragment<TourPresenter> implements OnActionCall
                 loadTour(KEY_SOUTH);
                 break;
         }
+    }
+
+    private void searchTour() {
+        SearchDialog dialog = new SearchDialog(getContext(), R.style.AppTheme);
+        dialog.show();
     }
 
     private void loadTour(String key) {

@@ -67,7 +67,7 @@ public class RegisterPresenter extends BasePresenter<RegisterCallBack> {
     protected void saveUser(FirebaseUser data) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        User user = new User(data.getUid(), "", "",data.getEmail(),"");
+        User user = new User(data.getUid(), data.getEmail(), "",data.getEmail(),"");
         myRef.child("user").child(user.getId()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
