@@ -10,6 +10,7 @@ import com.neos.touristbook.event.AccountCallback;
 import com.neos.touristbook.model.User;
 import com.neos.touristbook.presenter.AccoutPresenter;
 import com.neos.touristbook.view.base.BaseFragment;
+import com.neos.touristbook.view.dialog.BookedTourDialog;
 import com.neos.touristbook.view.dialog.EditProfileDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
 
@@ -62,7 +63,8 @@ public class AccountFrg extends BaseFragment<AccoutPresenter> implements Account
     }
 
     private void showBookedTour() {
-        //  hieenr thị màn tour đã đặt
+        BookedTourDialog dialog = new BookedTourDialog(getContext(), R.style.AppTheme);
+        dialog.show();
     }
 
     private void updateProfile() {

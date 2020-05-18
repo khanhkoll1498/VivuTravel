@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.neos.touristbook.event.TourCallback;
 import com.neos.touristbook.model.Review;
 import com.neos.touristbook.model.Tour;
+import com.neos.touristbook.model.TourOrder;
 import com.neos.touristbook.utils.CommonUtils;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Random;
 public class TourPresenter extends BasePresenter<TourCallback> {
     private static final String KEY_RECENT = "KEY_RECENT";
     private static final String KEY_FAVORITE = "KEY_FAVORITE";
+    private static final String KEY_BOOKED = "KEY_BOOKED";
 
     public TourPresenter(TourCallback mCallback) {
         super(mCallback);
@@ -147,10 +149,30 @@ public class TourPresenter extends BasePresenter<TourCallback> {
     private List<Tour> searchTour(String text, List<Tour> tourList) {
         List<Tour> list = new ArrayList<>();
         for (int i = 0; i < tourList.size(); i++) {
-            if (tourList.get(i).getTitle().toLowerCase().contains(text.toLowerCase())){
+            if (tourList.get(i).getTitle().toLowerCase().contains(text.toLowerCase())) {
                 list.add(tourList.get(i));
             }
         }
         return list;
+    }
+
+    public void saveBookedTour(TourOrder tour) {
+        List<TourOrder> list = getBookedTourList();
+        list.add(0, tour);
+        CommonUtils.getInstance().savePref(KEY_BOOKED, new Gson().toJson(list));
+    }
+
+    private List<TourOrder> getBookedTourList() {
+        String data = CommonUtils.getInstance().getValuePref(KEY_BOOKED, "");
+        if (data.isEmpty()) {
+            return new ArrayList<>();
+        }
+        return new Gson().fromJson(data, new TypeToken<List<TourOrder>>() {
+        }.getType());
+    }
+
+    public void loadBookedTour() {
+        List<TourOrder> list = getBookedTourList();
+        mCallback.onResultTourOrderList(list);
     }
 }

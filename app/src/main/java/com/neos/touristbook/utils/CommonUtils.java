@@ -187,4 +187,10 @@ public class CommonUtils {
         return formatter.format(date);
     }
 
+    public String formatTimeToDate(long duration) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/YYYY");
+        Date date = new Date(duration);
+        formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return formatter.format(date);
+    }
 }

@@ -1,6 +1,7 @@
 package com.neos.touristbook.view.dialog;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +15,8 @@ import com.neos.touristbook.view.base.BaseDialog;
 
 public class ConfirmTourDialog extends BaseDialog {
     private TextView tvConfirm;
+    public static String kEY_BOOK_SC = "kEY_BOOK_SC";
+    private TextView tvPrice;
 
     public ConfirmTourDialog(@NonNull Context context, int style) {
         super(context, style);
@@ -36,7 +39,9 @@ public class ConfirmTourDialog extends BaseDialog {
         tvConfirm = (TextView) findViewById(R.id.tv_book_tour, this);
         tvConfirm.setText("Thanh toán");
         findViewById(R.id.iv_home).setVisibility(View.GONE);
+        ((TextView) findViewById(R.id.tv_title)).setText("Xác nhận thông tin");
         findViewById(R.id.iv_back, this);
+        tvPrice = (TextView) findViewById(R.id.tv_price);
 
         edtName.setFocusable(false);
         edtEmail.setFocusable(false);
@@ -44,20 +49,26 @@ public class ConfirmTourDialog extends BaseDialog {
         edtPhone.setFocusable(false);
         edtNumPerson.setFocusable(false);
     }
-
     @Override
     public void onClick(View v) {
-        if (v.getId()==R.id.iv_back){
+        if (v.getId() == R.id.iv_back) {
             dismiss();
-        }else  if (v.getId()==R.id.tv_book_tour){
-            CommonUtils.getInstance().toast("Xác nhận tour");
+        } else if (v.getId() == R.id.tv_book_tour) {
+            showLoading();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    hideLoading();
+                    mCallback.callback(kEY_BOOK_SC, null);
+                    dismiss();
+                }
+            }, 2000);
         }
-
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.dialog_book_tour;
+        return R.layout.dialog_confirm_tour;
     }
 
     public void setTourOrder(TourOrder tourOrder) {
@@ -66,5 +77,7 @@ public class ConfirmTourDialog extends BaseDialog {
         edtAddress.setText(tourOrder.getAddress());
         edtPhone.setText(tourOrder.getPhone());
         edtNumPerson.setText(tourOrder.getNumPerson() + "");
+        tvPrice.setText(tourOrder.getTotalPrice());
     }
+
 }
