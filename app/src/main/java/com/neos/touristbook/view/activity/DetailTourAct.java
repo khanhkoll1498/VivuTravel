@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.widget.NestedScrollView;
@@ -21,7 +22,9 @@ import com.neos.touristbook.view.base.BaseActivity;
 import com.neos.touristbook.view.dialog.BookTourDialog;
 import com.neos.touristbook.view.event.OnActionCallback;
 import com.rd.PageIndicatorView;
+import com.ymb.ratingbar_lib.RatingBar;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +40,9 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
     private PreviewAdapter adapter;
     private NestedScrollView nestedContent;
     private PageIndicatorView pageIndicatorView;
+    private TextView tvNumStar, tvNumRate;
+    private RatingBar rating;
+    private LinearLayout lnRate;
 
     @Override
     protected int getLayoutId() {
@@ -53,10 +59,24 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         mapView();
         tour = (Tour) getIntent().getSerializableExtra("data");
         mPresenter.saveRecentTour(tour);
+        mPresenter.getRateStar(tour);
         updateUI();
     }
 
+    @Override
+    public void onResultRate(Float numStar, long numRate) {
+        if (numRate == 0) {
+            return;
+        }
+        DecimalFormat df = new DecimalFormat("#.#");
+        lnRate.setVisibility(View.VISIBLE);
+        tvNumStar.setText( df.format(numStar));
+        rating.setRating(numStar);
+        tvNumRate.setText("(" + numRate + ")");
+    }
+
     private void mapView() {
+        lnRate = findViewById(R.id.rl_rate);
         nestedContent = findViewById(R.id.nested_content);
         tvTitle = findViewById(R.id.tv_title);
         tvAddress = findViewById(R.id.tv_address);
@@ -64,6 +84,10 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         tvPrice2 = findViewById(R.id.tv_price2);
         tvDes = findViewById(R.id.tv_description);
         rvPlan = findViewById(R.id.rv_plan);
+        tvNumStar = findViewById(R.id.tv_num_star);
+        tvNumRate = findViewById(R.id.tv_num_rate);
+        rating = (RatingBar) findViewById(R.id.rating);
+
         ivFavorite = findViewById(R.id.iv_favorite, this);
         findViewById(R.id.iv_back, this);
         findViewById(R.id.tv_book_tour, this);
@@ -126,11 +150,6 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
 
     }
 
-
-    public void setTour(Tour tour) {
-        this.tour = tour;
-
-    }
 
     private void updateUI() {
         initPreView();

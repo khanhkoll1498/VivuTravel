@@ -67,8 +67,8 @@ public class EditProfileDialog extends BaseDialog<AccoutPresenter> implements On
 
     @Override
     public void onResultUser(User user) {
-        if (user==null){
-            mCallback.callback(KEY_UPDATE,null);
+        if (user == null) {
+            mCallback.callback(KEY_UPDATE, null);
             dismiss();
         }
     }
@@ -90,8 +90,10 @@ public class EditProfileDialog extends BaseDialog<AccoutPresenter> implements On
 
     public void updateUser(User mUser) {
         if (mUser != null) {
-            urlImage = mUser.getImage();
-            Glide.with(getContext()).load("file://" + mUser.getImage()).into(ivAvatar);
+            if (!mUser.getImage().isEmpty()) {
+                urlImage = mUser.getImage();
+                Glide.with(getContext()).load("file://" + mUser.getImage()).into(ivAvatar);
+            }
             edtName.setText(mUser.getName());
             edtPhone.setText(mUser.getPhone());
             edtEmail.setText(mUser.getEmail());

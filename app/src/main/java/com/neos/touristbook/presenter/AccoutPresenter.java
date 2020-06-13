@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.neos.touristbook.event.AccountCallback;
+import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.model.User;
 import com.neos.touristbook.utils.CommonUtils;
 
@@ -47,4 +48,6 @@ public class AccoutPresenter extends BasePresenter<AccountCallback> {
             }
         });
     }
+
+
 }

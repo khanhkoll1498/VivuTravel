@@ -37,7 +37,6 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
 
     public void loginGoogle() {
         mAuth = FirebaseAuth.getInstance();
-
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(App.getInstance().getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -58,14 +57,15 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
         try {
             GoogleSignInAccount account = task.getResult(ApiException.class);
-            firebaseAuthWithGoogle(account);
-        } catch (Exception e) {
-            CommonUtils.getInstance().log(e.toString());
+            if (account != null) {
+                firebaseAuthWithGoogle(account);
+            }
+        } catch (ApiException e) {
+            CommonUtils.getInstance().log(e.getStatusCode()+"");
         }
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount account) {
-
         AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -73,7 +73,9 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            saveUser(user);
+                            if (user != null) {
+                                saveUser(user);
+                            }
                         } else {
                             mCallback.loginFailed();
                         }
@@ -81,7 +83,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                 });
     }
 
-    protected void saveUser(FirebaseUser data) {
+    private void saveUser(FirebaseUser data) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
         User user = new User(data.getUid(), data.getDisplayName(), data.getPhotoUrl().toString(), data.getEmail(), "");

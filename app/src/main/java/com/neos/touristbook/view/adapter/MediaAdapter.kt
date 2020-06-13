@@ -42,8 +42,8 @@ class MediaAdapter(var mList: MutableList<Image>, var context: Context) : BaseAd
 
         override fun initView() {
             itemView.setOnClickListener(this)
-            ivMedia = findViewById(R.id.iv_media)
-            ivCheck = findViewById(R.id.iv_check)
+            ivMedia = itemView.findViewById(R.id.iv_media)
+            ivCheck = itemView.findViewById(R.id.iv_check)
         }
 
         override fun onClick(v: View) {

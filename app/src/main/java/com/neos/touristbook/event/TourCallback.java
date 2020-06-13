@@ -26,4 +26,8 @@ public interface TourCallback extends OnCallback {
     default void onResultTourOrderList(List<TourOrder> list) {
 
     }
+
+    default void onResultRate(Float numStar, long numRate) {
+
+    }
 }

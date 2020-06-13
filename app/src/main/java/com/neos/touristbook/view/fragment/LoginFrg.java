@@ -40,6 +40,8 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
     protected void initView() {
         findViewById(R.id.tv_login, this);
         findViewById(R.id.tv_register, this);
+        findViewById(R.id.tv_login_fb, this);
+        findViewById(R.id.tv_login_gg, this);
         edtEmail = findViewById(R.id.edt_email);
         edtPass = findViewById(R.id.edt_pass);
         updateUI();
@@ -65,7 +67,11 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
         } else if (v.getId() == R.id.tv_login) {
             Account account = new Account(edtEmail.getText().toString(), edtPass.getText().toString());
             mPresenter.loginWithAccount(account);
-            mCallback.callback(KEY_SHOW_LOADING,null);
+            mCallback.callback(KEY_SHOW_LOADING, null);
+        } else if (v.getId() == R.id.tv_login_fb) {
+
+        } else if (v.getId() == R.id.tv_login_gg) {
+            mPresenter.loginGoogle();
         }
     }
 
@@ -83,7 +89,7 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
     @Override
     public void loginFailed() {
         CommonUtils.getInstance().toast("Đăng nhập không thành công!");
-        mCallback.callback(KEY_HIDE_LOADING,null);
+        mCallback.callback(KEY_HIDE_LOADING, null);
     }
 
     @Override

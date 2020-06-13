@@ -134,6 +134,7 @@
             android:src="@drawable/ic_facebook" />
 
         <TextView
+            android:id="@+id/tv_login_fb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -148,6 +149,7 @@
             android:src="@drawable/ic_google" />
 
         <TextView
+            android:id="@+id/tv_login_gg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8sdp"
@@ -155,7 +157,6 @@
             android:textColor="#D5524E"
             android:textSize="@dimen/_14sdp" />
     </LinearLayout>
-
 
 
 </LinearLayout>

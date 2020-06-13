@@ -1,5 +1,14 @@
 package com.neos.touristbook.presenter;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.neos.touristbook.event.TourCallback;
@@ -159,11 +168,11 @@ public class TourPresenter extends BasePresenter<TourCallback> {
     public void saveBookedTour(TourOrder tour) {
         List<TourOrder> list = getBookedTourList();
         list.add(0, tour);
-        CommonUtils.getInstance().savePref(KEY_BOOKED, new Gson().toJson(list));
+        CommonUtils.getInstance().savePref(KEY_BOOKED + FirebaseAuth.getInstance().getCurrentUser().getUid(), new Gson().toJson(list));
     }
 
     private List<TourOrder> getBookedTourList() {
-        String data = CommonUtils.getInstance().getValuePref(KEY_BOOKED, "");
+        String data = CommonUtils.getInstance().getValuePref(KEY_BOOKED + FirebaseAuth.getInstance().getCurrentUser().getUid(), "");
         if (data.isEmpty()) {
             return new ArrayList<>();
         }
@@ -174,5 +183,41 @@ public class TourPresenter extends BasePresenter<TourCallback> {
     public void loadBookedTour() {
         List<TourOrder> list = getBookedTourList();
         mCallback.onResultTourOrderList(list);
+    }
+
+    public void updateTourOrder(List<TourOrder> list) {
+        CommonUtils.getInstance().savePref(KEY_BOOKED+ FirebaseAuth.getInstance().getCurrentUser().getUid(), new Gson().toJson(list));
+    }
+
+    public void rateTour(Tour tour, float star) {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+        myRef.child("rate").child(tour.getId()).child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(star).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                CommonUtils.getInstance().toast("Cảm ơn bạn đã đánh giá");
+            }
+        });
+    }
+
+
+    public void getRateStar(Tour tour) {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+        myRef.child("rate").child(tour.getId()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                long numRate = dataSnapshot.getChildrenCount();
+                Float numStar = 0f;
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    numStar += postSnapshot.getValue(Float.class);
+                }
+                numStar = numStar / numRate;
+                mCallback.onResultRate(numStar, numRate);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

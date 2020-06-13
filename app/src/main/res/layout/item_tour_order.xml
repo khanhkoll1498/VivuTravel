@@ -113,13 +113,12 @@
                 android:textSize="@dimen/_10sdp"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_rate"
         android:layout_width="@dimen/_55sdp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_25sdp"
         android:layout_alignParentRight="true"
         android:background="@drawable/bg_corner_8dp"
         android:backgroundTint="@color/colorLightBlue"

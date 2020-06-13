@@ -77,12 +77,16 @@ public class AccountFrg extends BaseFragment<AccoutPresenter> implements Account
 
     @Override
     public void onResultUser(User user) {
-        this.mUser = user;
-        Glide.with(getContext()).load("file://" + user.getImage()).into(ivAvatar);
-        tvName.setText(user.getName());
-        tvShownName.setText(user.getName());
-        tvEmail.setText(user.getEmail());
-        tvPhone.setText(user.getPhone());
+        try {
+            this.mUser = user;
+            Glide.with(getContext()).load("file://" + user.getImage()).into(ivAvatar);
+            tvName.setText(user.getName());
+            tvShownName.setText(user.getName());
+            tvEmail.setText(user.getEmail());
+            tvPhone.setText(user.getPhone());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

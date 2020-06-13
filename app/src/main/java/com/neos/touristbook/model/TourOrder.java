@@ -12,7 +12,7 @@ public class TourOrder {
     private boolean isRate;
 
     public boolean isRate() {
-        if ((System.currentTimeMillis() - id) > 24 * 60 * 60 * 1000) {
+        if ((System.currentTimeMillis() - id) > 24*60*60*1000) {
             return true;
         }
         return false;

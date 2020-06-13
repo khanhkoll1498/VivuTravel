@@ -63,10 +63,25 @@ public class BookedTourDialog extends BaseDialog<TourPresenter> implements OnAct
 
     @Override
     public void callback(String key, Object data) {
-
+        TourOrder tourOrder = (TourOrder) data;
+        if (tourOrder.isRate()) {
+            rateTour(tourOrder);
+        } else {
+            cancelTour(tourOrder);
+        }
     }
 
+    private void cancelTour(TourOrder tourOrder) {
+        adapter.notifyItemRemoved(mList.indexOf(tourOrder));
+        mList.remove(tourOrder);
+        mPresenter.updateTourOrder(mList);
+    }
 
+    private void rateTour(TourOrder tourOrder) {
+        RateTourDialog dialog = new RateTourDialog(getContext(), R.style.AppTheme);
+        dialog.setData(tourOrder.getTour());
+        dialog.show();
+    }
 
     @Override
     public void onResultTourOrderList(List<TourOrder> list) {

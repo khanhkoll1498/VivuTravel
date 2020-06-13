@@ -57,7 +57,7 @@ public class TourOrderAdapter extends BaseAdapter {
         holder.tvName.setText(Html.fromHtml("<b>Tên</b>: " + tourOrder.getName()));
         holder.tvDate.setText(Html.fromHtml("<b>Ngày dặt Tour</b>: " + CommonUtils.getInstance().formatTimeToDate(tourOrder.getId())));
         holder.tvPhone.setText(Html.fromHtml("<b>SDT</b>: " + tourOrder.getPhone()));
-        holder.itemView.setTag(item);
+        holder.itemView.setTag(tourOrder);
         if (tourOrder.isRate()) {
             holder.tvRate.setText("Đánh giá");
             holder.tvRate.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
