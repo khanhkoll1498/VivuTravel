@@ -1,36 +1,45 @@
 {
   "project_info": {
-    "project_number": "1044263490886",
-    "firebase_url": "https://vivuapp-ef9c2.firebaseio.com",
-    "project_id": "vivuapp-ef9c2",
-    "storage_bucket": "vivuapp-ef9c2.appspot.com"
+    "project_number": "1049122741926",
+    "firebase_url": "https://mytourvivu.firebaseio.com",
+    "project_id": "mytourvivu",
+    "storage_bucket": "mytourvivu.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1044263490886:android:2a7dd767fcc19c53b10147",
+        "mobilesdk_app_id": "1:1049122741926:android:798a77a63d694f162c5e67",
         "android_client_info": {
           "package_name": "com.neos.touristbook"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1044263490886-psff6qlvp0unldbcdcbf2utn0h3sm82e.apps.googleusercontent.com",
+          "client_id": "1049122741926-12l4epu9fv3bm7pt9fuc7toa9dkmsj9j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.neos.touristbook",
             "certificate_hash": "a156bea6cd31ce9a9266c7880a3d7f7ef3bea25d"
           }
+        },
+        {
+          "client_id": "1049122741926-mbudbavvc3jcnio3524vt9oopbc55472.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDbUQKU6u3zpMt25DbmYSlzOxp8a_Ee37M"
+          "current_key": "AIzaSyBzkI_7aTRDvhqlL6oPLUayzNHKhuYXB_c"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049122741926-mbudbavvc3jcnio3524vt9oopbc55472.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

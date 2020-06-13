@@ -38,10 +38,9 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
     public void loginGoogle() {
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("1044263490886-psff6qlvp0unldbcdcbf2utn0h3sm82e.apps.googleusercontent.com")
-//                .requestEmail()
+                .requestIdToken(App.getInstance().getString(R.string.default_web_client_id))
+                .requestEmail()
                 .build();
-//        App.getInstance().getString(R.string.default_web_client_id)
 
         mGoogleSignInClient = GoogleSignIn.getClient(App.getInstance(), googleSignInOptions);
 
@@ -58,7 +57,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                 firebaseAuthWithGoogle(account);
             }
         } catch (ApiException e) {
-            CommonUtils.getInstance().log(e.getStatusCode()+"");
+            CommonUtils.getInstance().toast(e.getLocalizedMessage()+"");
         }
     }
 
