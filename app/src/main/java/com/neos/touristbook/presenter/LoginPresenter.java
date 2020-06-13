@@ -110,6 +110,5 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                         }
                     }
                 });
-
     }
 }
