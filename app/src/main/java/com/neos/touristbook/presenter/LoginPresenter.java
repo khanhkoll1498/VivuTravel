@@ -108,6 +108,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                         } else {
                             mCallback.loginFailed();
                         }
+
                     }
                 });
     }
