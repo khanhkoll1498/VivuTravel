@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
+import com.facebook.AccessToken;
 import com.google.firebase.auth.FirebaseAuth;
 import com.neos.touristbook.R;
 import com.neos.touristbook.event.AccountCallback;
@@ -92,7 +93,7 @@ public class EditProfileDialog extends BaseDialog<AccoutPresenter> implements On
         if (mUser != null) {
             if (!mUser.getImage().isEmpty()) {
                 urlImage = mUser.getImage();
-                Glide.with(getContext()).load("file://" + mUser.getImage()).into(ivAvatar);
+                Glide.with(getContext()).load(mUser.getImage()).into(ivAvatar);
             }
             edtName.setText(mUser.getName());
             edtPhone.setText(mUser.getPhone());

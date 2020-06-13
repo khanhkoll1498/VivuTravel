@@ -15,31 +15,22 @@
       },
       "oauth_client": [
         {
-          "client_id": "1044263490886-kkp2ja8gspmkm9leh6l10cdaep3gkph4.apps.googleusercontent.com",
+          "client_id": "1044263490886-psff6qlvp0unldbcdcbf2utn0h3sm82e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.neos.touristbook",
-            "certificate_hash": "33370b45f68f614ce003704fdace778d9d95f040"
+            "certificate_hash": "a156bea6cd31ce9a9266c7880a3d7f7ef3bea25d"
           }
-        },
-        {
-          "client_id": "1044263490886-q3fcp0p944ushunrv3s1ac8b1homs0h9.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCFCpi2BJHNnpTBoSFDwoUx0_qEHDsAeSY"
+          "current_key": "AIzaSyDbUQKU6u3zpMt25DbmYSlzOxp8a_Ee37M"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1044263490886-q3fcp0p944ushunrv3s1ac8b1homs0h9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

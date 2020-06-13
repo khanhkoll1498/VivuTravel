@@ -128,34 +128,72 @@
         android:layout_marginLeft="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_8sdp">
 
-        <ImageView
-            android:layout_width="@dimen/_18sdp"
-            android:layout_height="@dimen/_18sdp"
-            android:src="@drawable/ic_facebook" />
-
-        <TextView
-            android:id="@+id/tv_login_fb"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_8sdp"
-            android:text="Facebook"
-            android:textColor="#4A69A5"
-            android:textSize="@dimen/_14sdp" />
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="@dimen/_18sdp"
-            android:layout_height="@dimen/_18sdp"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:src="@drawable/ic_google" />
 
-        <TextView
-            android:id="@+id/tv_login_gg"
+            <ImageView
+                android:id="@+id/iv_icon_fb"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_facebook" />
+
+            <TextView
+                android:id="@+id/tv_login_fb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_toRightOf="@+id/iv_icon_fb"
+                android:text="Facebook"
+                android:textColor="#4A69A5"
+                android:textSize="@dimen/_14sdp" />
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="30dp"
+                android:alpha="0" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_8sdp"
-            android:text="Google"
-            android:textColor="#D5524E"
-            android:textSize="@dimen/_14sdp" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_icon_gg"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:src="@drawable/ic_google" />
+
+            <TextView
+                android:id="@+id/tv_login_gg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_toRightOf="@+id/iv_icon_gg"
+                android:text="Google"
+                android:textColor="#D5524E"
+                android:textSize="@dimen/_14sdp" />
+
+            <com.google.android.gms.common.SignInButton
+                android:visibility="gone"
+                android:id="@+id/sign_in_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0" />
+        </RelativeLayout>
+
     </LinearLayout>
 
 

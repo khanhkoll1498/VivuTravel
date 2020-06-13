@@ -38,18 +38,15 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
     public void loginGoogle() {
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(App.getInstance().getString(R.string.default_web_client_id))
-                .requestEmail()
+                .requestIdToken("1044263490886-psff6qlvp0unldbcdcbf2utn0h3sm82e.apps.googleusercontent.com")
+//                .requestEmail()
                 .build();
+//        App.getInstance().getString(R.string.default_web_client_id)
 
         mGoogleSignInClient = GoogleSignIn.getClient(App.getInstance(), googleSignInOptions);
 
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         mCallback.onStartLoginGG(signInIntent);
-    }
-
-    public void loginFaceBook() {
-
     }
 
 
@@ -98,6 +95,10 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
     }
 
     public void loginWithAccount(Account account) {
+        if (account.getEmail().isEmpty() || account.getPassword().isEmpty()){
+            mCallback.loginFailed();
+            return;
+        }
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithEmailAndPassword(account.getEmail(), account.getPassword())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -108,7 +109,6 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                         } else {
                             mCallback.loginFailed();
                         }
-
                     }
                 });
     }

@@ -54,12 +54,16 @@ public class TourCategoryDialog extends BaseDialog<TourPresenter> implements OnA
     }
 
     private void updateUI() {
-        if (key.equals(HomeFrg.KEY_NOTHERN)) {
-            tvTitle.setText("Miền Bắc");
-        } else if (key.equals(HomeFrg.KEY_CENTRAL)) {
-            tvTitle.setText("Miền Trung");
-        } else if (key.equals(HomeFrg.KEY_SOUTH)) {
-            tvTitle.setText("Miền Nam");
+        switch (key) {
+            case HomeFrg.KEY_NOTHERN:
+                tvTitle.setText("Miền Bắc");
+                break;
+            case HomeFrg.KEY_CENTRAL:
+                tvTitle.setText("Miền Trung");
+                break;
+            case HomeFrg.KEY_SOUTH:
+                tvTitle.setText("Miền Nam");
+                break;
         }
     }
 

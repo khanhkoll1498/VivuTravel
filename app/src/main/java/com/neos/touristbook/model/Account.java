@@ -4,8 +4,8 @@ public class Account {
     private String email, password;
 
     public Account(String email, String password) {
-        this.email = email;
-        this.password = password;
+        this.email = "";
+        this.password = "";
     }
 
     public String getEmail() {

@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Vivu Travel</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="facebook_app_id">3053808677988543</string>
     <string name="fb_login_protocol_scheme">fb3053808677988543</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

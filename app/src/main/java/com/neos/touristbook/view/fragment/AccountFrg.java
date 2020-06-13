@@ -79,7 +79,7 @@ public class AccountFrg extends BaseFragment<AccoutPresenter> implements Account
     public void onResultUser(User user) {
         try {
             this.mUser = user;
-            Glide.with(getContext()).load("file://" + user.getImage()).into(ivAvatar);
+            Glide.with(getContext()).load(user.getImage()).into(ivAvatar);
             tvName.setText(user.getName());
             tvShownName.setText(user.getName());
             tvEmail.setText(user.getEmail());

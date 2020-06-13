@@ -5,6 +5,8 @@ import android.content.Intent;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.neos.touristbook.R;
 import com.neos.touristbook.view.base.BaseActivity;
@@ -62,6 +64,8 @@ public class MainActivity extends BaseActivity {
     public void callback(String key, Object data) {
         if (key.equals(KEY_SIGN_OUT)) {
             FirebaseAuth.getInstance().signOut();
+            LoginManager.getInstance().logOut();
+
             startActivity(new Intent(this, LoginAct.class));
             finish();
         }
