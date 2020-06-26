@@ -38,6 +38,7 @@
             android:paddingLeft="@dimen/_8sdp"
             android:paddingRight="@dimen/_8sdp"
             android:singleLine="true"
+            android:fontFamily="@font/nunito_regular"
             android:text="Hà Nội - Quy Nhơn - Tuy Hòa 4N3Đ Bay"
             android:textSize="@dimen/_10sdp"
             android:textStyle="bold" />

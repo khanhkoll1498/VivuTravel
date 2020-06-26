@@ -12,6 +12,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.neos.touristbook.event.TourCallback;
+import com.neos.touristbook.model.BotData;
 import com.neos.touristbook.model.Review;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.model.TourOrder;
@@ -186,7 +187,7 @@ public class TourPresenter extends BasePresenter<TourCallback> {
     }
 
     public void updateTourOrder(List<TourOrder> list) {
-        CommonUtils.getInstance().savePref(KEY_BOOKED+ FirebaseAuth.getInstance().getCurrentUser().getUid(), new Gson().toJson(list));
+        CommonUtils.getInstance().savePref(KEY_BOOKED + FirebaseAuth.getInstance().getCurrentUser().getUid(), new Gson().toJson(list));
     }
 
     public void rateTour(Tour tour, float star) {
@@ -219,5 +220,35 @@ public class TourPresenter extends BasePresenter<TourCallback> {
 
             }
         });
+    }
+
+    public void reply(String msg, Tour tour) {
+        String data = CommonUtils.getInstance().readFileFromAssets("chatbot.json");
+        List<BotData> list = new Gson().fromJson(data, new TypeToken<List<BotData>>() {
+        }.getType());
+
+        for (int i = 0; i < list.size(); i++) {
+            if (isContain(msg, list.get(i).getQues())) {
+                if (msg.contains("giá") || msg.contains("gia")) {
+                    mCallback.onReply(String.format(list.get(i).getAns().get(0), tour.getTitle(), tour.getPrice()));
+                } else if (msg.contains("miêu tả") || msg.contains("mieu ta")) {
+                    mCallback.onReply(String.format(list.get(i).getAns().get(0), tour.getDescription()));
+                } else {
+                    mCallback.onReply(list.get(i).getAns().get(new Random().nextInt(list.get(i).getAns().size())));
+                }
+                return;
+            }
+        }
+
+    }
+
+    private boolean isContain(String msg, String ques) {
+        String[] str = ques.split(",");
+        for (int i = 0; i < str.length; i++) {
+            if (msg.contains(str[i])) {
+                return true;
+            }
+        }
+        return false;
     }
 }

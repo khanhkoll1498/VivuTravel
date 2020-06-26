@@ -38,6 +38,14 @@ public class Tour implements Serializable {
     @Expose
     private List<Plan> plans = null;
 
+    @SerializedName("location")
+    @Expose
+    private List<String> locations = null;
+
+    public List<String> getLocations() {
+        return locations;
+    }
+
     public String getId() {
         return id;
     }

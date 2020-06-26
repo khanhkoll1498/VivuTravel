@@ -27,9 +27,21 @@
       {
         "content": "Ngày 03: KHỞI HÀNH VỀ ĐIỂM ĐÓN BAN ĐẦU (Ăn sáng, trưa, tối). Buổi sáng tham quan Khu du lịch thác Datanla. Quý khách tự túc thử cảm giác mạnh với hệ thống máng trượt có chiều dài hơn 1.000m uốn lượn quanh các sườn núi. Sau đó khởi hành về điểm đón ban đầu  trên đường về thưởng thức trà và cà phê miễn phí tại một danh trà ở Bảo Lộc. Tỏi về tới điểm đón ban đầu, kết thúc chương trình. Chào tạm biệt và hẹn gặp lại!"
       }
+    ],
+    "location": [
+      "Phố Huế",
+      "Chùa Tấn Quốc",
+      "Cầu giấy",
+      "Đường lãng"
     ]
   },
   {
+    "location": [
+      "Phố Huế",
+      "Chùa Tấn Quốc",
+      "Cầu giấy",
+      "Đường lãng"
+    ],
     "category": "cate_02",
     "id": "1",
     "imageList": [
@@ -60,6 +72,12 @@
     ]
   },
   {
+    "location": [
+      "Phố Huế",
+      "Chùa Tấn Quốc",
+      "Cầu giấy",
+      "Đường lãng"
+    ],
     "category": "cate_01",
     "id": "2",
     "imageList": [

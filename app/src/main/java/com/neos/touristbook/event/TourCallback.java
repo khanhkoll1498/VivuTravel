@@ -1,5 +1,6 @@
 package com.neos.touristbook.event;
 
+import com.neos.touristbook.model.BotData;
 import com.neos.touristbook.model.Review;
 import com.neos.touristbook.model.Tour;
 import com.neos.touristbook.model.TourOrder;
@@ -28,6 +29,10 @@ public interface TourCallback extends OnCallback {
     }
 
     default void onResultRate(Float numStar, long numRate) {
+
+    }
+
+    default void onReply(String botData){
 
     }
 }

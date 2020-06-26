@@ -1,0 +1,23 @@
+[
+  {
+    "ques": "hello,hi,xin chào,chào,chao,good morning",
+    "ans": [
+      "chào bạn, bạn vui lòng để lại số điên thoại, nhân viên sẽ tư vấn cho bạn trong thời gian sớm nhất",
+      "Xin chào, rất vui được gặp bạn",
+      "Xin chào, bạn cần tôi giúp gì ?",
+      "Xin chào, tôi có thể giúp gì được cho bạn"
+    ]
+  },
+  {
+    "ques": "gia,giá,giá của tour,gia cua tour",
+    "ans": [
+      "giá của tour %s là %s"
+    ]
+  },
+  {
+    "ques": "miêu tả,mieu ta",
+    "ans": [
+      "%s"
+    ]
+  }
+]

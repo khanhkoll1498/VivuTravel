@@ -69,7 +69,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
         } catch (Exception e) {
 
         }
-
     }
 
     protected abstract void initPresenter();
