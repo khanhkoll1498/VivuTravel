@@ -82,10 +82,9 @@ public class MapsActivity extends BaseActivity implements OnMapReadyCallback {
                 if (i == 0) {
                     googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(l2, 12.0f));
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
         }
         for (int i = 0; i < latLngs.size(); i++) {
             if (i != 0) {

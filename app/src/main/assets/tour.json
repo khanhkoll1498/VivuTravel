@@ -39,8 +39,8 @@
     "location": [
       "Đà Nẵng",
       "Hội An",
-      "Khu du lịch non nước",
-      "Cầu tình yêu"
+      "Đá mỹ nghệ non nước đà nẵng",
+      "cầu tình yêu đà nẵng"
     ],
     "category": "cate_02",
     "id": "1",
@@ -659,23 +659,6 @@
       }
     ]
   },
-  {
-    "category": "cate_02",
-    "id": "19",
-    "imageList": [
-      {
-        "image": "http://cdn2.ivivu.com/2018/12/31/16/ivivu-ta-dung-1.jpg"
-      },
-      {
-        "image": "http://cdn2.ivivu.com/2019/09/10/16/ivivu-buon-me-thuot.jpg"
-      },
-      {
-        "image": "http://cdn2.ivivu.com/2019/10/07/14/ivivu-bao-tang-dak-lak.jpg"
-      },
-      {
-        "image": "http://cdn2.ivivu.com/2018/03/22/17/ivivu-thac-dray-nur.jpg"
-      }
-    ],
 
   {
     "category": "cate_02",
