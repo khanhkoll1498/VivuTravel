@@ -66,9 +66,6 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
     protected void initView() {
         mapView();
         tour = (Tour) getIntent().getSerializableExtra("data");
-        Intent intent = new Intent(this, MapsActivity.class);
-        intent.putExtra("data", tour);
-        startActivity(intent);
         mPresenter.saveRecentTour(tour);
         mPresenter.getRateStar(tour);
         updateUI();
@@ -76,6 +73,7 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
 
     @Override
     public void onResultRate(Float numStar, long numRate) {
+        rating.setEnabled(false);
         if (numRate == 0) {
             return;
         }
@@ -83,7 +81,7 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         lnRate.setVisibility(View.VISIBLE);
         tvNumStar.setText(df.format(numStar));
         rating.setRating(numStar);
-        tvNumRate.setText("(" + numRate + ")");
+        tvNumRate.setText("(" + numRate + ") lượt đánh giá");
     }
 
     private void mapView() {
@@ -101,6 +99,7 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         ivFavorite = findViewById(R.id.iv_favorite, this);
         findViewById(R.id.iv_back, this);
         findViewById(R.id.tv_book_tour, this);
+        findViewById(R.id.iv_maps, this);
         nestedContent.scrollTo(0, 0);
         initChat();
     }
@@ -140,6 +139,11 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
                 break;
             case R.id.iv_close:
                 findViewById(R.id.rl_chat_view).setVisibility(View.GONE);
+                break;
+            case R.id.iv_maps:
+                Intent intent = new Intent(this, MapsActivity.class);
+                intent.putExtra("data", tour);
+                startActivity(intent);
                 break;
         }
     }

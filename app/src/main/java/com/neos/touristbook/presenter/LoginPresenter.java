@@ -57,7 +57,7 @@ public class LoginPresenter extends BasePresenter<LoginCallBack> {
                 firebaseAuthWithGoogle(account);
             }
         } catch (ApiException e) {
-            CommonUtils.getInstance().toast(e.getLocalizedMessage()+"");
+            CommonUtils.getInstance().toast(e.getLocalizedMessage() + "");
         }
     }
 

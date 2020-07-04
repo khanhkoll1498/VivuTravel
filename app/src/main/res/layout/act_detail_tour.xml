@@ -79,54 +79,77 @@
                     attrs:piv_radius="@dimen/_3sdp" />
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:fontFamily="@font/nunito_regular"
-                android:text="@string/com_facebook_device_auth_instructions"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/_12sdp"
-                android:textStyle="bold" />
-
             <LinearLayout
-                android:id="@+id/rl_rate"
+                android:layout_margin="@dimen/_8sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_8sdp"
-                android:orientation="horizontal"
-                android:visibility="gone">
+                android:background="@drawable/bg_corner_20dp"
+                android:elevation="@dimen/_5sdp"
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_num_star"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4.3"
-                    android:textSize="@dimen/_12sdp" />
-
-                <com.ymb.ratingbar_lib.RatingBar
-                    android:id="@+id/rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/_8sdp"
-                    app:drawable_empty="@drawable/ic_star1"
-                    app:drawable_filled="@drawable/ic_star2"
-                    app:drawable_half="@drawable/ic_star1"
-                    app:drawable_size="@dimen/_14sdp"
-                    app:is_indicator="false"
-                    app:max_count="5"
-                    app:rating="5" />
-
-                <TextView
-                    android:id="@+id/tv_num_rate"
+                    android:id="@+id/tv_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_8sdp"
-                    android:text="4.3"
-                    android:textSize="@dimen/_12sdp" />
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/com_facebook_device_auth_instructions"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/rl_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_20sdp">
+
+                    <TextView
+                        android:id="@+id/tv_num_star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="0"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ymb.ratingbar_lib.RatingBar
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        app:drawable_empty="@drawable/ic_star1"
+                        app:drawable_filled="@drawable/ic_star2"
+                        app:drawable_half="@drawable/ic_star1"
+                        app:drawable_size="@dimen/_14sdp"
+                        app:is_indicator="false"
+                        app:max_count="5"
+                        app:rating="0" />
+
+                    <TextView
+                        android:id="@+id/tv_num_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:text="0 lượt đánh giá"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_maps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_maps" />
+                    </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -185,7 +208,6 @@
                 android:layout_marginLeft="@dimen/_8sdp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 
     <RelativeLayout
         android:id="@+id/rl_bottom"

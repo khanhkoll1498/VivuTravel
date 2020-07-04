@@ -31,7 +31,6 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
     public static final String KEY_SHOW_LOADING = "KEY_SHOW_LOADING";
     public static final String KEY_HIDE_LOADING = "KEY_HIDE_LOADING";
     private EditText edtEmail, edtPass;
-    private GoogleSignInClient googleSignInClient;
 
     @Override
     protected void initPresenter() {
@@ -71,18 +70,24 @@ public class LoginFrg extends BaseFragment<LoginPresenter> implements LoginCallB
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.tv_register) {
-            mCallback.callback(KEY_TO_REGISTER, null);
-        } else if (v.getId() == R.id.tv_login) {
-            Account account = new Account(edtEmail.getText().toString(), edtPass.getText().toString());
-            mPresenter.loginWithAccount(account);
-            mCallback.callback(KEY_SHOW_LOADING, null);
-        } else if (v.getId() == R.id.tv_login_fb) {
-            loginFB();
-        } else if (v.getId() == R.id.tv_login_gg) {
-            mPresenter.loginGoogle();
-        } else if (v.getId() == R.id.edt_email) {
-            edtEmail.setCursorVisible(true);
+        switch (v.getId()) {
+            case R.id.tv_register:
+                mCallback.callback(KEY_TO_REGISTER, null);
+                break;
+            case R.id.tv_login:
+                Account account = new Account(edtEmail.getText().toString(), edtPass.getText().toString());
+                mPresenter.loginWithAccount(account);
+                mCallback.callback(KEY_SHOW_LOADING, null);
+                break;
+            case R.id.tv_login_fb:
+                loginFB();
+                break;
+            case R.id.tv_login_gg:
+                mPresenter.loginGoogle();
+                break;
+            case R.id.edt_email:
+                edtEmail.setCursorVisible(true);
+                break;
         }
     }
 
