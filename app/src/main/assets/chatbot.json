@@ -19,5 +19,36 @@
     "ans": [
       "%s"
     ]
+  },
+  {
+    "ques": "like,love,thích,yêu",
+    "ans": [
+      "Thank you very much",
+      "I love you too ^^",
+      "Tôi cũng yêu bạn"
+    ]
+  },
+  {
+    "ques": "tour,muốn,du lịch,du lich,muon",
+    "ans": [
+      "Tôi có thể giúp gì cho bạn?",
+      "Đó là một ý kiến tuyệt vời"
+    ]
+  },
+  {
+    "ques": "bye,chào,goodbye,tạm biệt,chao,tam biet",
+    "ans": [
+      "Cám ơn bạn đã quan tâm",
+      "Hẹn gặp lại!"
+    ]
+  },
+  {
+    "ques": "thanks,thank you,cám ơn,cam on,",
+    "ans": [
+      "Chúc bạn có một chuyến đi tốt đẹp",
+      "Cám ơn, chúc bạn có một chuyến đi tuyệt vời",
+      "Goodbye, have a nice trip!",
+      "Thank you. Have a good day!"
+    ]
   }
 ]

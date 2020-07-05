@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1049122741926-23v44q0sffmb0sjbs2clk207268hkuq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neos.touristbook",
+            "certificate_hash": "d3777ff9f2f2f14b4bb4d4bfd2ab4f6eb6d39acb"
+          }
+        },
+        {
           "client_id": "1049122741926-jj8samhc8bi4b2b0dpbd2f00cdpo93au.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
