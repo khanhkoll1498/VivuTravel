@@ -107,7 +107,8 @@ public class BookTourDialog extends BaseDialog<TourPresenter> implements OnActio
     @Override
     public void callback(String key, Object data) {
         if (key.equals(kEY_BOOK_SC)) {
-            CommonUtils.getInstance().toast("Đã Thanh toán thành công !");
+            CommonUtils.getInstance().toast("Mail xác nhận đã được gửi tới email của bạn. Xin vui lòng sớm hoàn\n" +
+                    "tất thủ tục thanh toán theo hướng dẫn trong mail");
             mPresenter.saveBookedTour(tourOrder);
             dismiss();
         }

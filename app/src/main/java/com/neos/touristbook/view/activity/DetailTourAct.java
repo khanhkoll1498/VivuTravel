@@ -69,6 +69,7 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
         mPresenter.saveRecentTour(tour);
         mPresenter.getRateStar(tour);
         updateUI();
+
     }
 
     @Override
@@ -136,6 +137,18 @@ public class DetailTourAct extends BaseActivity<TourPresenter> implements OnActi
                 break;
             case R.id.iv_chat:
                 findViewById(R.id.rl_chat_view).setVisibility(View.VISIBLE);
+                mList.clear();
+                typing.setVisibility(View.VISIBLE);
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        typing.setVisibility(View.GONE);
+                        mList.add(new Message(String.format("VivuTravel xin chào! Bạn đang quan tâm đến %s đúng không?",tour.getTitle()), 0));
+                        mList.add(new Message("Chúng tôi có thể giúp gì cho bạn?", 0));
+                    }
+                }, 1000);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.iv_close:
                 findViewById(R.id.rl_chat_view).setVisibility(View.GONE);
