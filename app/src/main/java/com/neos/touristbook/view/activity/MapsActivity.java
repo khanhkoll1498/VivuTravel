@@ -101,25 +101,23 @@ public class MapsActivity extends BaseActivity implements OnMapReadyCallback {
                 e.printStackTrace();
             }
         }
-//        for (int i = 0; i < latLngs.size(); i++) {
-//            if (i != 0) {
-//                googleMap.addPolyline(new PolylineOptions().add(
-//                        latLngs.get(i - 1), latLngs.get(i)
-//                ).width(10).color(Color.RED));
-//            }
-//        }
-//        googleMap.addPolyline(new PolylineOptions().add(
-//                latLngs.get(latLngs.size() - 1), latLngs.get(0)
-//        ).width(10).color(Color.RED));
+        for (int i = 0; i < latLngs.size(); i++) {
+            if (i != 0) {
+                String url = getDirectionsUrl(latLngs.get(i - 1), latLngs.get(i));
+                DownloadTask FetchUrl = new DownloadTask();
+                FetchUrl.execute(url);
+            }
+        }
 
-        String url = getDirectionsUrl(latLngs.get(0), latLngs.get(1));
-        Toast.makeText(this, url, Toast.LENGTH_SHORT).show();
+        String url = getDirectionsUrl(latLngs.get(latLngs.size() - 1), latLngs.get(0));
         DownloadTask FetchUrl = new DownloadTask();
         FetchUrl.execute(url);
+
         map.moveCamera(CameraUpdateFactory.newLatLng(latLngs.get(0)));
-        map.animateCamera(CameraUpdateFactory.zoomTo(11));
+        map.animateCamera(CameraUpdateFactory.zoomTo(15));
 
     }
+
 
     private String getDirectionsUrl(LatLng origin, LatLng dest) {
 
