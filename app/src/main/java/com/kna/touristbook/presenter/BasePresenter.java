@@ -1,0 +1,52 @@
+package com.kna.touristbook.presenter;
+
+
+import android.os.Handler;
+import android.os.Message;
+
+import androidx.annotation.NonNull;
+
+import com.kna.touristbook.App;
+import com.kna.touristbook.StorageCommon;
+import com.kna.touristbook.event.OnCallback;
+
+abstract public class BasePresenter<T extends OnCallback> {
+    protected T mCallback;
+
+    protected Handler mHandler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message msg) {
+            excuteHandler(msg);
+            return false;
+        }
+    });
+
+    protected void excuteHandler(Message msg) {
+
+    }
+
+    protected StorageCommon getStorageCommon() {
+        return App.getInstance().getStorageCommon();
+    }
+
+
+    protected void updateHandler(int... value) {
+        if (value.length == 0) {
+            return;
+        }
+        Message msg = new Message();
+        msg.what = value[0];
+        try {
+            msg.arg1 = value[1];
+            msg.arg2 = value[2];
+        } catch (Exception e) {
+
+        }
+        msg.setTarget(mHandler);
+        msg.sendToTarget();
+    }
+
+    public BasePresenter(T mCallback) {
+        this.mCallback = mCallback;
+    }
+}

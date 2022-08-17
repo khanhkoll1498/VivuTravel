@@ -2,10 +2,11 @@
     <string name="app_name">Vivu Travel</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="facebook_app_id">3053808677988543</string>
-    <string name="fb_login_protocol_scheme">fb3053808677988543</string>
+    <string name="facebook_app_id">603216341182856</string>
+    <string name="fb_login_protocol_scheme">fb603216341182856</string>
+    <string name="facebook_client_token">a9d7ef22ff945d03e5f76db81d4708c9</string>
 
     <string name="title_activity_maps">Map</string>
-    <string name="google_maps_key">AIzaSyCGP32gz1yzVBnpAXHqKDJyo-KccCXAaAA</string>
+    <string name="google_maps_key">AIzaSyCoYes4Ab9xlEp0IwFWt35k41XU7a5523g</string>
 
 </resources>

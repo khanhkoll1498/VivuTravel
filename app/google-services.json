@@ -1,58 +1,50 @@
 {
   "project_info": {
-    "project_number": "1049122741926",
-    "firebase_url": "https://mytourvivu.firebaseio.com",
-    "project_id": "mytourvivu",
-    "storage_bucket": "mytourvivu.appspot.com"
+    "project_number": "628337561480",
+    "firebase_url": "https://vivutravel-d77b0-default-rtdb.firebaseio.com",
+    "project_id": "vivutravel-d77b0",
+    "storage_bucket": "vivutravel-d77b0.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1049122741926:android:798a77a63d694f162c5e67",
+        "mobilesdk_app_id": "1:628337561480:android:3690d86edeb0622f7f743d",
         "android_client_info": {
-          "package_name": "com.neos.touristbook"
+          "package_name": "com.kna.touristbook"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1049122741926-23v44q0sffmb0sjbs2clk207268hkuq5.apps.googleusercontent.com",
+          "client_id": "628337561480-fsetbi5hc7oc9v9sis6323r6sdjpu1h3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.neos.touristbook",
-            "certificate_hash": "d3777ff9f2f2f14b4bb4d4bfd2ab4f6eb6d39acb"
+            "package_name": "com.kna.touristbook",
+            "certificate_hash": "376cc6c479c9f585b243ab027247f39e7ab4b0c8"
           }
         },
         {
-          "client_id": "1049122741926-jj8samhc8bi4b2b0dpbd2f00cdpo93au.apps.googleusercontent.com",
+          "client_id": "628337561480-pua1tubooptfe02v4qas609omcr75fsk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.neos.touristbook",
-            "certificate_hash": "db2bfd9b6ae7e31dae58220875ddba62c47dd3c0"
+            "package_name": "com.kna.touristbook",
+            "certificate_hash": "eb845d8d39006cb0ae46faa6eb733cf33504033e"
           }
         },
         {
-          "client_id": "1049122741926-12l4epu9fv3bm7pt9fuc7toa9dkmsj9j.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.neos.touristbook",
-            "certificate_hash": "a156bea6cd31ce9a9266c7880a3d7f7ef3bea25d"
-          }
-        },
-        {
-          "client_id": "1049122741926-mbudbavvc3jcnio3524vt9oopbc55472.apps.googleusercontent.com",
+          "client_id": "628337561480-5gdcsdf1j0qm1sgfb58eofdf9h8r01sk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzkI_7aTRDvhqlL6oPLUayzNHKhuYXB_c"
+          "current_key": "AIzaSyCM_7no2A_KoEwCZYe3UdGhAMsgMvVZTic"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1049122741926-mbudbavvc3jcnio3524vt9oopbc55472.apps.googleusercontent.com",
+              "client_id": "628337561480-5gdcsdf1j0qm1sgfb58eofdf9h8r01sk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

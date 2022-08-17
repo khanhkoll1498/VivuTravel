@@ -42,7 +42,7 @@
                 android:layout_toRightOf="@+id/iv_avatar"
                 android:fontFamily="@font/nunito_regular"
                 android:gravity="center_vertical"
-                android:text="Nhật Ánh"
+                android:text="Khanh Koll"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/_16sdp" />
 
@@ -95,7 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_8sdp"
                     android:layout_marginTop="@dimen/_5sdp"
-                    android:text="Họ tên"
+                    android:text="Khanh"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/_12sdp" />
             </LinearLayout>

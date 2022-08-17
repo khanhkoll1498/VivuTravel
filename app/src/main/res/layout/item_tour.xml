@@ -8,6 +8,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/_140sdp"
+        app:cardElevation="0dp"
         app:cardCornerRadius="@dimen/_8sdp">
 
         <ImageView
@@ -26,7 +27,6 @@
         android:layout_marginLeft="@dimen/_24sdp"
         android:layout_marginRight="@dimen/_24sdp"
         android:background="@drawable/bg_corner_8dp"
-        android:elevation="@dimen/_10sdp"
         android:orientation="vertical">
 
         <TextView
